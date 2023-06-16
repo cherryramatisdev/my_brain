@@ -1,9 +1,12 @@
 #!/bin/sh
 
 timestamp=$(date -u +"%Y%m%dT%H%M%S")
-filepath="posts/$timestamp"
 
-mkdir "$filepath"
+pushd posts
+
+mkdir "$timestamp"
+
+popd
 
 # This make it work with my template strategy
-nvim -c ":e posts/$filepath/README.md"
+nvim -c ":e posts/$timestamp/README.md"
