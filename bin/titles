@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+# Find all Markdown files
+files = Dir.glob('posts/**/*.md')
+
+# Create an array to store the titles
+titles = []
+
+# Loop through each file
+files.each do |file|
+  # Read the content of the file
+  content = File.read(file)
+
+  # Extract the frontmatter
+  frontmatter = content.match(/\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m)
+
+  if frontmatter
+    # Parse the frontmatter as YAML
+    data = YAML.safe_load(frontmatter[1])
+
+    # Extract the title from the frontmatter
+    title = data['title']
+
+    # Add the title to the array
+    titles << title if title
+  end
+end
+
+# Display a menu and allow the user to select a file to edit
+if titles.empty?
+  puts "No Markdown files with titles found."
+else
+  puts "Select a file to edit the title:"
+
+  # Display the menu
+  titles.each_with_index { |title, index| puts "#{index + 1}. #{title}" }
+
+  # Prompt the user for a selection
+  print "Enter the number of the file to edit: "
+  selection = gets.chomp.to_i
+
+  if selection.between?(1, titles.length)
+    selected_title = titles[selection - 1]
+    selected_file = files.find { |file| File.read(file).include?(selected_title) }
+
+    system("nvim #{selected_file}")
+  else
+    puts "Invalid selection."
+  end
+end
