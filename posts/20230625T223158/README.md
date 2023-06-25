@@ -4,7 +4,7 @@ description: How to create your own completion for vim
 tags: 'vim,neovim'
 cover_image: ''
 canonical_url: null
-published: false
+published: true
 ---
 
 Have you ever thought about defining your own completion for particular things like emails, contact names or for something complex like tailwind classes or github usernames? Well, my goal on this post is to show you how to do it in a simple and concise way!
