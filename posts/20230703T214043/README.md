@@ -65,21 +65,18 @@ This file will live on the root of our project and should look like this:
 package yourproject
 
 import (
-▷┅Z "github.com/rwxrob/bonzai/z"
+  Z "github.com/rwxrob/bonzai/z"
   "github.com/rwxrob/help"
-▷┅"github.com/rwxrob/pomo"
+  "github.com/rwxrob/pomo"
 )
 
 var Cmd = &Z.Cmd{
-▷┅Name:        "pixie",
-▷┅Summary:     "A general purpose command line tool",
-▷┅Usage:       "",
-▷┅Version:     "0.0.1",
-▷┅Description: "A general purpose command line tool",
-▷┅Site:        "https://github.com/cherryramatisdev/pixie-cli",
-▷┅Source:      "https://github.com/cherryramatisdev/pixie-cli",
-▷┅Issues:      "https://github.com/cherryramatisdev/pixie-cli/issues",
-▷┅Commands:    []*Z.Cmd{help.Cmd},
+  Name:        "mycli",
+  Summary:     "A CLI",
+  Usage:       "",
+  Version:     "0.0.1",
+  Description: "A CLI",
+  Commands:    []*Z.Cmd{help.Cmd},
 }
 ```
 
@@ -88,4 +85,35 @@ As you can see we're using the `Z` package to define the root command and the `h
 Running our project with `go run ./cmd/yourproject/main.go` you should have this message:
 
 ```
+NAME
+       mycli - A CLI
+
+SYNOPSIS
+       mycli COMMAND
+
+COMMANDS
+       help - display help similar to man page format
+
+DESCRIPTION
+       A CLI
+
 ```
+
+This is all because of the `help` package that is itself a bonzai branch that you can easily plug into your main CLI.
+
+## How to setup tab completion for this (bash only)
+
+Now that we have a basic project running, let's configure our tab completion to start getting the real power of bonzai:
+
+1. Install your binary with `go install ./cmd/yourproject` to have it available on `PATH`
+2. Configure the completion
+
+> DISCLAIMER: This is assuming you already have the bash_completion configured on your shell
+
+On bash you just need to put on your `.bashrc` this line:
+
+```sh
+complete -C <yourbinary> <yourbinary>
+```
+
+And you're done! You can start tab completing everything on your CLI.
