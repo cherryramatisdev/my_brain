@@ -8,5 +8,4 @@ mkdir "$timestamp"
 
 popd
 
-# This make it work with my template strategy
-nvim -c ":e posts/$timestamp/README.md"
+echo posts/$timestamp/README.md
