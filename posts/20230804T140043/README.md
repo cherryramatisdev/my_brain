@@ -4,7 +4,7 @@ description: Let's talk about creating an API using sinatra, rom-rb and dry-syst
 tags: 'ruby,backend,sinatra,dry,rom'
 cover_image: ''
 canonical_url: null
-published: false
+published: true
 ---
 
 ## Introduction
