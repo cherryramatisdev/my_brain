@@ -7,28 +7,21 @@ canonical_url: null
 published: true
 ---
 
+
+
 ## Table of contents
    1. [Introduction](#introduction)
+
    2. [What do we do when our applications start to grow?](#what-do-we-do-when-our-applications-start-to-grow)
+
    3. [How do we solve these problems? dry-system to the rescue!](#how-do-we-solve-these-problems-dry-system-to-the-rescue)
-      1. [A simple Sinatra application](#a-simple-sinatra-application)
-         1. [Start a bundle project](#start-a-bundle-project)
-         2. [Add our gems](#add-our-gems)
-         3. [Create a router class to encapsulate our execution](#create-a-router-class-to-encapsulate-our-execution)
+
    4. [Improving our Sinatra application](#improving-our-sinatra-application)
+
    5. [Adding dry-system and dry-auto_inject gems as our dependency injection layer](#adding-dry-system-and-dry-auto_inject-gems-as-our-dependency-injection-layer)
-         1. [Adding our gems](#adding-our-gems)
-         2. [Making our application REPL work](#making-our-application-repl-work)
-         3. [Creating our main container](#creating-our-main-container)
-         4. [Adding a sample service as a provider](#adding-a-sample-service-as-a-provider)
-      1. [Enjoying the benefits of our work](#enjoying-the-benefits-of-our-work)
+
    6. [Adding database connections with ROM and our modular architecture](#adding-database-connections-with-rom-and-our-modular-architecture)
-      1. [Adding our gems](#adding-our-gems)
-      2. [Registering a database connection as a provider for our system](#registering-a-database-connection-as-a-provider-for-our-system)
-      3. [Adding support for migration commands](#adding-support-for-migration-commands)
-      4. [Defining our relations and repositories](#defining-our-relations-and-repositories)
-      5. [Making our code available through the codebase](#making-our-code-available-through-the-codebase)
-      6. [Refactor time, shall we?](#refactor-time-shall-we)
+
    7. [Conclusion](#conclusion)
 
 ## Introduction
@@ -187,13 +180,13 @@ Simple right? Now everything should work fine, but we won't stop there, so let's
 
 ## Adding dry-system and dry-auto_inject gems as our dependency injection layer
 
-#### Adding our gems
+### Adding our gems
 
 ```sh
 bundle add dry-system dry-auto_inject zeitwerk
 ```
 
-#### Making our application REPL work
+### Making our application REPL work
 
 A REPL (Read-Eval-Print Loop) is a very important tool for Ruby developers. Both the Rails and Hanami frameworks provide one, so we'll set up a simple REPL for our application. This will allow us to further integrate the dependency injection layer, which will make our code more modular and easier to test.
 
@@ -219,7 +212,7 @@ To make it executable you can run `chmod +x ./bin/console`
 
 Now we should have a working REPL for the application!
 
-#### Creating our main container
+### Creating our main container
 
 This container will be used to register all the other components of our application
 
@@ -265,7 +258,7 @@ The `finalize!` method makes the `Application` instance variable available for t
 
 Now you can run `bin/console` and check the application instance by typing `Application` on the REPL.
 
-#### Adding a sample service as a provider
+### Adding a sample service as a provider
 
 Now that we have our main container, it's just a matter of registering providers to it, just like the following:
 
@@ -525,3 +518,4 @@ The refactor is done! Pretty easy, right? Our route should now use the database 
 I hope this article is useful for anyone who ends up reading it. I tried to demonstrate how easy it is to decouple application parts and manage them, even when each part requires complex setups.
 
 Furthermore, I'm always available to help with any doubt or just to chat about cool Ruby stuff. May the force be with you!
+
