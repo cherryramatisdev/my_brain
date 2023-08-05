@@ -7,6 +7,30 @@ canonical_url: null
 published: true
 ---
 
+## Table of contents
+   1. [Introduction](#introduction)
+   2. [What do we do when our applications start to grow?](#what-do-we-do-when-our-applications-start-to-grow)
+   3. [How do we solve these problems? dry-system to the rescue!](#how-do-we-solve-these-problems-dry-system-to-the-rescue)
+      1. [A simple Sinatra application](#a-simple-sinatra-application)
+         1. [Start a bundle project](#start-a-bundle-project)
+         2. [Add our gems](#add-our-gems)
+         3. [Create a router class to encapsulate our execution](#create-a-router-class-to-encapsulate-our-execution)
+   4. [Improving our Sinatra application](#improving-our-sinatra-application)
+   5. [Adding dry-system and dry-auto_inject gems as our dependency injection layer](#adding-dry-system-and-dry-auto_inject-gems-as-our-dependency-injection-layer)
+         1. [Adding our gems](#adding-our-gems)
+         2. [Making our application REPL work](#making-our-application-repl-work)
+         3. [Creating our main container](#creating-our-main-container)
+         4. [Adding a sample service as a provider](#adding-a-sample-service-as-a-provider)
+      1. [Enjoying the benefits of our work](#enjoying-the-benefits-of-our-work)
+   6. [Adding database connections with ROM and our modular architecture](#adding-database-connections-with-rom-and-our-modular-architecture)
+      1. [Adding our gems](#adding-our-gems)
+      2. [Registering a database connection as a provider for our system](#registering-a-database-connection-as-a-provider-for-our-system)
+      3. [Adding support for migration commands](#adding-support-for-migration-commands)
+      4. [Defining our relations and repositories](#defining-our-relations-and-repositories)
+      5. [Making our code available through the codebase](#making-our-code-available-through-the-codebase)
+      6. [Refactor time, shall we?](#refactor-time-shall-we)
+   7. [Conclusion](#conclusion)
+
 ## Introduction
 
 Today, among beginners with Ruby, it's common to think about two possible
@@ -16,7 +40,7 @@ Rails](https://rubyonrails.org/). Well, in this article, allow me to provide a
 way to manage a big application using Sinatra as the HTTP library and dry-rb
 libraries as the glue to a modular architecture.
 
-## 1. What do we do when our applications start to grow?
+## What do we do when our applications start to grow?
 
 What do we do when an application with a single Ruby file starts to grow with more dependencies? For me personally, the answer is **dependency injection**.
 Basically, I start thinking about how I'll manage the configuration of all these new libraries and use them quickly on my routes, so it's trivial to split
@@ -62,7 +86,7 @@ But what problem does this approach have? Well, this doesn't provide much comple
 2. *Some providers depend on another provider* :: It's quite hard to manage by hand when you want one provider for the database connection and another one for the repositories, and this happens a lot.
 3. *Require hell* :: On Ruby, we don't have the habit of importing all our libraries and internal code on every single file; frameworks such as Ruby on Rails provide auto-require for files with business logic, and when you roll an application by hand, it's hard to develop without this feature.
 
-## 2. How do we solve these problems? dry-system to the rescue!
+## How do we solve these problems? dry-system to the rescue!
 
 We'll assume a simple Sinatra application and evolve from that by adding dry-system to manage our dependencies; later on, we'll even add a persistence layer using a gem called rom-rb to increase the functionality for a more realistic API example.
 
@@ -72,19 +96,19 @@ Sinatra is a lightweight library that's quite simple to set up, but let's start 
 
 > DISCLAIMER: This part assumes basic knowledge about ruby language and the sinatra library.
 
-#### 1. Start a bundle project
+#### Start a bundle project
 
 ```sh
 mkdir myproject && cd myproject && bundle init
 ```
 
-#### 2. Add our gems
+#### Add our gems
 
 ```sh
 bundle add sinatra puma
 ```
 
-#### 3. Create a router class to encapsulate our execution
+#### Create a router class to encapsulate our execution
 
 Located at `config/router.rb`
 
@@ -163,13 +187,13 @@ Simple right? Now everything should work fine, but we won't stop there, so let's
 
 ## Adding dry-system and dry-auto_inject gems as our dependency injection layer
 
-#### 1. Add our gems
+#### Adding our gems
 
 ```sh
 bundle add dry-system dry-auto_inject zeitwerk
 ```
 
-#### 2. Making our application REPL work
+#### Making our application REPL work
 
 A REPL (Read-Eval-Print Loop) is a very important tool for Ruby developers. Both the Rails and Hanami frameworks provide one, so we'll set up a simple REPL for our application. This will allow us to further integrate the dependency injection layer, which will make our code more modular and easier to test.
 
@@ -195,7 +219,7 @@ To make it executable you can run `chmod +x ./bin/console`
 
 Now we should have a working REPL for the application!
 
-#### 3. Creating our main container
+#### Creating our main container
 
 This container will be used to register all the other components of our application
 
@@ -241,7 +265,7 @@ The `finalize!` method makes the `Application` instance variable available for t
 
 Now you can run `bin/console` and check the application instance by typing `Application` on the REPL.
 
-#### 4. Adding a sample service as a provider
+#### Adding a sample service as a provider
 
 Now that we have our main container, it's just a matter of registering providers to it, just like the following:
 
@@ -269,7 +293,7 @@ And on `bin/console`:
 require_relative '../config/providers/services'
 ```
 
-### 5. Enjoying the benefits of our work
+### Enjoying the benefits of our work
 
 Going back to our controller class, we can rewrite it like this:
 
@@ -294,13 +318,13 @@ This initial purpose already works for us, right? But we'll keep going further.
 
 Now that we have a basic understanding of how `dry-system` works to modularize our application, let's add a database layer using this knowledge while levering `rom-rb` with it.
 
-### 1. Adding our gems
+### Adding our gems
 
 ```sh
 bundle add rom rom-repository rom-sql pg
 ```
 
-### 2. Registering a database connection as a provider for our system
+### Registering a database connection as a provider for our system
 
 Since we're already using `dry-system` up to this point, let's work with it by adding the database connection as a provider:
 
@@ -325,7 +349,7 @@ end
 
 As you can see, the `register_provider` method provides a simple DSL that we can use to isolate our whole setup by requiring the correct libraries on `prepare` and then instantiating or registering the objects on `start`.
 
-### 3. Adding support for migration commands
+### Adding support for migration commands
 
 Now that we have our base connection done, let's create a `Rakefile` on the root of our project with the following content:
 
@@ -374,7 +398,7 @@ And finally, by running the following command, we can persist this migration on 
 rake db:migrate
 ```
 
-### 4. Defining our relations and repositories
+### Defining our relations and repositories
 
 In the `rom-rb` gem, we define our main classes as **relations** and **repositories**. Relations mimic the structure of our Postgres table, while repositories define our actions on that relation.
 
@@ -418,7 +442,7 @@ creating, updating, and deleting records. However, for more complex
 queries, we need to write our own methods. In this case, I have provided
  a simple `all` method that returns all the users, limited to a certain number.
 
-### 5. Making our code available through the codebase
+### Making our code available through the codebase
 
 Since we defined two new components for our applications, we'll create two new providers on the system.
 
@@ -470,7 +494,7 @@ require_relative '../config/providers/persistence'
 require_relative '../config/providers/repos'
 ```
 
-### 6. Refactor time, shall we?
+### Refactor time, shall we?
 
 Now that we've defined our required providers, it's just a matter of using them on the layer we want; this layer will be the service class for us.
 
