@@ -79,19 +79,17 @@ Result monad encapsulates two potential outcomes: either a `Success(value)` or a
 Consider the following class with a sample method returning a error:
 
 ```ruby
-require 'dry-monads'
+require 'dry/monads/all'
 
-class SampleClass
+class Auth
   include Dry::Monads[:result]
 
-  def find_user_by_id
-    user = nil
+  # @param name [String]
+  # @return [Failure({ error: Symbol, context: String }), { name: String }]
+  def authenticate(name:)
+    return Failure({ error: :unauthorized, context: 'Auth#authenticate' }) unless name == 'correct'
 
-    if user.nil?
-      Failure(:user_not_found)
-    else
-      Success(user)
-    end
+    Success({ name: 'cherry' })
   end
 end
 ```
@@ -99,7 +97,7 @@ end
 If you try to call this method excepting to see a `name` parameter from it like this:
 
 ```ruby
-val = SampleClass.new.find_user_by_id
+val = Auth.new.authenticate(name: 'correct')
 
 puts val.name
 ```
@@ -107,7 +105,7 @@ puts val.name
 You'll get an error from the ruby runtime:
 
 ```
-main.rb:19:in `<main>': undefined method `name' for Failure(:user_not_found):Dry::Monads::Result::Failure (NoMethodError)
+main.rb:19:in `<main>': undefined method `name' for Success({:name=>"cherry"}):Dry::Monads::Result::Success (NoMethodError)
 
 puts val.name
         ^^^^^
