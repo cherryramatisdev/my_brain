@@ -40,7 +40,8 @@ irb(main):003>
 As you can observe we get the output for simple operation stuff like `1 + 1` or even exception raising, quite cool right? This is an amazing feature because we can quickly evaluate complex operation to help us understand the algorithm as it's being written.
 
 ## Ok but why should I use this?
-![[Pasted image 20230903131823.png]]
+
+![Pasted image 20230903131823](https://github.com/cherryramatisdev/public_zet/assets/86631177/b34ea38e-812e-4eef-a675-4d8928fe675d)
 
 If you're a Ruby developer, chances are you've used `irb` for basic tasks like calculating `1 + 1` (after all, we're programmers, not mathematicians). But how can we go from using the REPL as a calculator to change the way we write software? To illustrate this, let's consider the following scenario: You're working on an API application that follows a simple service layer architecture and you just started to write a first implementation for a service. Now, what would you do to quickly execute that service and test if your logic is close?
 
@@ -54,7 +55,8 @@ On a "REPL Driven Development" scenario you have the exact opposite approach bec
 It's important to emphasize that I'm not against TDD philosophy, I find it quite useful and I want to use tests where they're great, that is checking if my solution goes along with the initial purpose. We shouldn't use tests to check whether our code running.
 
 ## A new cycle begins?
-![[Pasted image 20230903142637.png]]
+
+![Pasted image 20230903142637](https://github.com/cherryramatisdev/public_zet/assets/86631177/c8df33a4-045f-4ad2-874c-178f340a9956)
 
 When we start considering the REPL as part of our technical experience, another cycle start to merge that *lives alongside the TDD cycle* where we only reach for testing when we have something that run without errors keeping our test cases much more concise and bound to the original purpose. We also don't need to keep writing wrappers that just run our service so we can keep running a `curl` command to check logs.
 
@@ -171,7 +173,8 @@ Exception: RuntimeError: A error
 
 Bonus point: if you append `?` to the command, it'll show more detail about the exception depending on the number of `?` inserted.
 
-![[Pasted image 20230903171910.png]]
+![Pasted image 20230903171910](https://github.com/cherryramatisdev/public_zet/assets/86631177/7f0fbf97-727f-41cd-83a3-4d8138635b7c)
+
 ### Listing methods and editing them
 
 I use this **a lot** – it's truly amazing to iterate through code using the REPL as the primary source of truth. You can effortlessly navigate your codebase with context by utilizing commands like `ls`, `cd`, and `edit`.
