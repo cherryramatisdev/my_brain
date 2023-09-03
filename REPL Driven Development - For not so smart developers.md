@@ -11,13 +11,13 @@ Have you ever encountered a problem and immediately had the solution pop into yo
 - [Ok but what is a REPL](#ok-but-what-is-a-repl)
 - [Ok but why should I use this?](#ok-but-why-should-i-use-this)
 - [A new cycle begins?](#a-new-cycle-begins)
-- [The practical tips, how to setup a simple REPL in a ruby application](#the-pratical-tips-how-to-setup-a-simple-repl-in-a-ruby-application)
+- [How to setup a simple REPL in a ruby application](#how-to-setup-a-simple-repl-in-a-ruby-application)
 - [Introducing pry, a more concise implementation](#introducing-pry-a-more-concise-implementation)
 	- [Seeing a class documentation](#seeing-a-class-documentation)
 	- [How to visualize exceptions](#how-to-visualize-exceptions)
 	- [Listing methods and editing them](#listing-methods-and-editing-them)
 	- [Reloading the code to keep iterating over it](#reloading-the-code-to-keep-iterating-over-it)
-- [Bonus: Debugging tests with a REPL](#bonus-debugging-tests-ith-a-repl)
+- [Debugging tests with a REPL](#bonus-debugging-tests-with-a-repl)
 - [Conclusion](#conclusion)
 
 ## Ok but what is a REPL?
@@ -64,7 +64,7 @@ Unfortunately there are a few languages that implement a usable setup to use the
 
 Although it's cool to discuss the theory part and to think about a new philosophy, I want to help you put all of this in practice so let's go for the practical goodies shall we?
 
-## The practical tips, how to setup a simple REPL in a ruby application?
+## How to setup a simple REPL in a ruby application?
 
 On all my application tutorials I start by setting up an application level REPL, it's basically a `console` script that loads all the files inside your project, if you're using a framework like [Ruby on Rails](https://rubyonrails.org) or [Hanami](https://hanamirb.org) you already have a console by running the command `console` also.
 
