@@ -97,7 +97,7 @@ While running `pry`, you'll find two essential aliases for exploring class detai
 
 When you use `?`, you're essentially invoking the `ri` command on a method to view the YARD docs of it. However, `pry` provides a more user-friendly approach. You can use `?` on nearly any class or method without worrying about whether it will function as expected.
 
-```
+```sh
 $ bin/console
 [1] pry(main)> ? MonadicExceptions::Result.from_exception
 
@@ -128,7 +128,7 @@ end
 
 If you just want to see the source code it's recommended to use `$`:
 
-```
+```sh
 [2] pry(main)> $ MonadicExceptions::Result.from_exception
 
 From: /Users/cherryramatis/Repos/monadic-exceptions/lib/result.rb:12:
@@ -156,7 +156,7 @@ During the iterative development process, encountering error exceptions is almos
 
 In Pry, you have the command `wtf` (yes, you read it correctly) that allows you to view the details of the last triggered exception:
 
-```
+```sh
 [7] pry(main)> MonadicExceptions::Result.method_raising
 RuntimeError: A error
 from /Users/cherryramatis/Repos/monadic-exceptions/lib/result.rb:29:in `method_raising'
@@ -181,7 +181,7 @@ I use this **a lot** – it's truly amazing to iterate through code using the RE
 
 To list the methods of a class, it's as simple as applying `ls` to it:
 
-```
+```sh
 [13] pry(main)> ls MonadicExceptions::Result
 MonadicExceptions::Result.methods: from_exception  method_raising
 MonadicExceptions::Result#methods: blau  blau2  teste
@@ -190,7 +190,7 @@ MonadicExceptions::Result#methods: blau  blau2  teste
 
 If you want to look methods from a module or class as entry point you can first `cd` into it:
 
-```
+```sh
 [14] pry(main)> cd MonadicExceptions
 [15] pry(MonadicExceptions):1> ls
 constants: Result  ResultSanitizer
@@ -217,7 +217,7 @@ The [pry-reload](https://github.com/runa/pry-reload) gem provide the `reload!` c
 ## Bonus: Debugging tests with a REPL
 Alongside the wide range of gems around the pry REPL we have [pry-rescue](https://github.com/ConradIrwin/pry-rescue) that allow us to start a debugging REPL as soon as a test fails, that way we can investigate and fix it before waiting for all the other tests to run:
 
-```
+```sh
 $ rescue rspec
 From: /home/conrad/0/ruby/pry-rescue/examples/example_spec.rb @ line 9 :
 
