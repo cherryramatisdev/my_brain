@@ -1,15 +1,15 @@
 ---
 title: Linux filters - How to streamline text like a boss
 description: What is the linux philosophy and how to follow it by creating small tools that manipulate text and can be put in a pipeline, this is what we'll go through on this artcile.
-tags: 'ruby,shell,beginners,linux'
-cover_image: ''
-canonical_url: null
+tags: shell,beginners,linux
+cover_image: ""
+canonical_url: 
 published: false
 ---
-Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well-written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to write a script applying all those concepts shown below, both in bash and ruby, to improve your tool belt of technologies!
+Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to write a script applying all those concepts shown below, both in bash and ruby, to improve your tool belt of technologies!
 
 ## What is the Unix philosophy?
-The unix philosophy was originally defined by the master [Ken thompson](https://en.wikipedia.org/wiki/Ken_Thompson) and it's a set of good practices that define a *minimalist* and *modular* software, all the core utils from unix (such as `find`, `grep`) follow this good practices so we can agree that it need to be good right?
+The Unix philosophy was originally defined by the master [Ken thompson](https://en.wikipedia.org/wiki/Ken_Thompson) and it's a set of good practices that define a *minimalist* and *modular* software, all the core utils from Unix (such as `find`, `grep`) follow this good practices so we can agree that it need to be good right?
 
 The original quote documented by [Doug Mcllroy](https://en.wikipedia.org/wiki/Douglas_McIlroy) contain the following items:
 
@@ -20,7 +20,117 @@ The original quote documented by [Doug Mcllroy](https://en.wikipedia.org/wiki/Do
 
 The last two items define a more "programming in general" tips, the goal of this article will focus entirely on the first two tips where a good script can be known as *something that do one job really well and can be put in a pipeline*. On the following chapters we'll try to understand this phrase a little better.
 
-## What makes a good script?
-## Learning the building blocks
-### What is the pipeline operator?
-### What is stdin/stdout and how to manipulate it properly
+## What is a pipeline?
+A pipeline is a continuous run of programs where the stdout of one follow as the stdin of the next one, on bash/zsh/fish shells we can use the `|` operator to refer as a pipe and we use it a lot to further query information, for example: imagine you want to count how many markdown files you have in your directory, you can do the following:
+
+```sh
+find . -iname '*.md' | wc -l
+```
+
+Let's break it down piece by piece so you can understand properly shall we?
+
+First we have the `find` command being used to list all the markdown files on the current directory, for me personally this produces the following:
+
+```sh
+$ find . -iname '*.md'
+./posts/20230814T124722/README.md
+./posts/20230703T214043/README.md
+./posts/20230616T234323/README.md
+./posts/20230625T223158/README.md
+./posts/20230731T212528/README.md
+./posts/20230807T203924/README.md
+./posts/20230804T140043/README.md
+./REPL Driven Development - For not so smart developers.md
+./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
+./Linux filters - How to streamline text like a boss.md
+```
+
+If you just want to list the proper file names without counting them, you can even pipeline to a `sort` command to list alphabetically like the following:
+
+```sh
+$ find . -iname '*.md' | sort
+./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
+./Linux filters - How to streamline text like a boss.md
+./REPL Driven Development - For not so smart developers.md
+./posts/20230616T234323/README.md
+./posts/20230625T223158/README.md
+./posts/20230703T214043/README.md
+./posts/20230731T212528/README.md
+./posts/20230804T140043/README.md
+./posts/20230807T203924/README.md
+./posts/20230814T124722/README.md
+```
+
+See how the output of the first `find` command was streamlined to the `sort` command where it returned it properly sorted? This is the entire purpose of writing small tools, that way you can easily compose them into different pipelines to get cool results.
+
+In the case of the initial example we used the `wc` command that only count whatever it receives from stdin, in this case we use the `-l` flag to count lines. With all that put together voilá! We have our result:
+
+```sh
+$ find . -iname '*.md' | wc -l
+      10
+```
+
+## What is stdin and stdout?
+
+Stdin (standard input) and stdout (standard output) are the main ways that a computer communicates with the outside world. Below, we'll delve more into the details of each one:
+
+- Stdin (standard input) is normally referred to as anything that waits for a user interaction (like typing on an input, selecting an item from a list, etc.), but this can be understood in a more generalized way; basically, we can think of Stdin as the default *information provider*, whether this comes from another program or from a user interacting with it.
+- Stdout (standard output) is normally referred to as anything that prints out a value to the screen (can be a terminal, browser, or anything), differently from Stdin. This is totally correct, the only caveat is that when inserted in a pipeline context, all stdout is suppressed as the stdin of the next command instead of printing to the screen.
+
+## What defines a bad script and how to turn into a good one?
+If I try to provide a good summary of what defines a good script, I'll probably fail because of the many variables involved in the matter. Instead, let's look at the opposite: what does a bad script look like according to the Linux philosophy and how can we solve the specific problem to create slightly better tools?
+
+### Ignoring standard input and output communication
+
+Have you ever used some CLIs that have a fancy way to display information with an animated input or a cool spinner? It's indeed quite cool to use those tools when you just want to use it by itself, but when you try to put those tools in a pipeline they break the whole line. Instead always write your tools by using standard communication as the primary way to receive and retrieve information, prefer to use options instead of hard coding values (a example of option is `--output=json` or `-o json`).
+
+In ruby it's far easier to not shoot yourself on the foot because the way we learn to get data already works pretty well with the standard input, but it's important to keep an eye on how you design your script.
+
+For example, consider this simple script called `printname.rb` example:
+
+```ruby
+#!/usr/bin/env ruby
+
+puts 'Type your name: '
+name = gets.chomp
+
+puts "Your name is: #{name}"
+```
+
+This script in a first glance works both running by itself and on a pipeline, but observe the output produced by both:
+
+```sh
+$ echo "Cherry Ramatis" | ./printname.rb
+Type your name:
+Your name is: Cherry Ramatis
+```
+
+```
+$ ./printname.rb
+Type your name:
+Cherry Ramatis
+Your name is: Cherry Ramatis
+```
+
+You can observe that we're always printing the `Type your name` message, in this case we have two options:
+
+- Accept this name with a flag parameters instead by receiving `--name="Cherry Ramatis"`
+- Drop the `Type your name` message, turning the script into a more pipelineable (nice word huh?) one.
+
+### Doing a lot on the same tool, aka monolithic scripts
+
+Sometimes you're writing a tool and quickly observe that the scope got bigger while you were writing it, now what should be a small tool is growing to be a big project with various interactive steps. When it reaches that point it's quite seducing to just keep iterating on the same tool by adding a lot of sub commands, but the unix philosophy help us understand that writing a tool that *do one thing right* is more valuable than writing a gigantic behemoth.
+
+So instead of creating a big CLI with a whole set of commands, try to think in writing small separate tools that interconnect and complement each other, for example:
+
+Imagine you want to write a command that list all the songs from a database in a particular order and prompt the user to choose one, instead of writing all those functionalities in *one* command, you can compose with different ones like:
+
+```sh
+$ list_songs | sort | update_song
+```
+
+See how `list_songs` and `update_song` are different scripts? both communicate via STDIN and STDOUT, allowing the user to pipeline through any command and receive the same behavior (for example we're piping it to sort because we want to view the list in a sorted manner.)
+
+## Conclusion
+
+This is a smaller article where I tried to bring more context into something that I do a lot in my day to day life: **automating**. I hope this content is useful for you and if I can help with anything just reach me out! May the force be with you 🍒
