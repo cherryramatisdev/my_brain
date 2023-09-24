@@ -6,6 +6,7 @@ cover_image: ""
 canonical_url: 
 published: false
 ---
+
 Elixir works **really** well for concurrent code because of it's functional nature and ability to run in multiple processes, but how we handle state when our code is running all over the place? Well, there is some techniques and in this article we'll learn more about it together shall we?
 
 ```
