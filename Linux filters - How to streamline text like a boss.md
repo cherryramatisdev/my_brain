@@ -1,12 +1,23 @@
 ---
 title: Linux filters - How to streamline text like a boss
 description: What is the linux philosophy and how to follow it by creating small tools that manipulate text and can be put in a pipeline, this is what we'll go through on this artcile.
-tags: shell,beginners,linux
+tags: ruby,shell,beginners,linux,vim
 cover_image: ""
 canonical_url: 
 published: false
 ---
-Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to write a script applying all those concepts shown below, both in bash and ruby, to improve your tool belt of technologies!
+Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to apply those as good practices on our ruby/bash scripts!
+
+## Table of Contents
+- [What is the Unix philosophy?](#what-is-the-unix-philosophy)
+- [What is a pipeline?](#what-is-a-pipeline)
+- [What is stdin and stdout?](#what-is-stdin-and-stdout)
+- [What defines a bad script and how to turn into a good one?](#what-defines-a-bad-script-and-how-to-turn-into-a-good-one)
+	- [Ignoring standard input and output communication](#ignoring-standard-input-and-output-communication)
+	- [Doing a lot on the same tool, aka monolithic scripts](#doing-a-lot-on-the-same-tool-aka-monolithic-scripts)
+- [Bonus point: The bang operator in vim](#bonus-point-the-bang-operator-in-vim)
+- [Conclusion](#conclusion)
+
 
 ## What is the Unix philosophy?
 The Unix philosophy was originally defined by the master [Ken thompson](https://en.wikipedia.org/wiki/Ken_Thompson) and it's a set of good practices that define a *minimalist* and *modular* software, all the core utils from Unix (such as `find`, `grep`) follow this good practices so we can agree that it need to be good right?
@@ -21,6 +32,7 @@ The original quote documented by [Doug Mcllroy](https://en.wikipedia.org/wiki/Do
 The last two items define a more "programming in general" tips, the goal of this article will focus entirely on the first two tips where a good script can be known as *something that do one job really well and can be put in a pipeline*. On the following chapters we'll try to understand this phrase a little better.
 
 ## What is a pipeline?
+
 A pipeline is a continuous run of programs where the stdout of one follow as the stdin of the next one, on bash/zsh/fish shells we can use the `|` operator to refer as a pipe and we use it a lot to further query information, for example: imagine you want to count how many markdown files you have in your directory, you can do the following:
 
 ```sh
@@ -45,7 +57,7 @@ $ find . -iname '*.md'
 ./Linux filters - How to streamline text like a boss.md
 ```
 
-If you just want to list the proper file names without counting them, you can even pipeline to a `sort` command to list alphabetically like the following:
+If you just want to list the proper file names without counting them, you can even pipe it to the `sort` command, that way it lists alphabetically like the following:
 
 ```sh
 $ find . -iname '*.md' | sort
@@ -75,16 +87,17 @@ $ find . -iname '*.md' | wc -l
 Stdin (standard input) and stdout (standard output) are the main ways that a computer communicates with the outside world. Below, we'll delve more into the details of each one:
 
 - Stdin (standard input) is normally referred to as anything that waits for a user interaction (like typing on an input, selecting an item from a list, etc.), but this can be understood in a more generalized way; basically, we can think of Stdin as the default *information provider*, whether this comes from another program or from a user interacting with it.
-- Stdout (standard output) is normally referred to as anything that prints out a value to the screen (can be a terminal, browser, or anything), differently from Stdin. This is totally correct, the only caveat is that when inserted in a pipeline context, all stdout is suppressed as the stdin of the next command instead of printing to the screen.
+- Stdout (standard output) is normally referred to as anything that prints out a value to the screen (it can be a terminal, a browser, or anything). Differently from Stdin, this is totally correct, the only caveat is that when inserted in a pipeline context, all stdout is suppressed as the stdin of the next command instead of printing to the screen.
 
 ## What defines a bad script and how to turn into a good one?
-If I try to provide a good summary of what defines a good script, I'll probably fail because of the many variables involved in the matter. Instead, let's look at the opposite: what does a bad script look like according to the Linux philosophy and how can we solve the specific problem to create slightly better tools?
+
+Describing a exact summary of what is a good script can be quite tricky because of the many variables involved. Instead, let's flip the question: what does a bad script look like according to the Linux philosophy? And how can we solve the specific problem to create slightly better tools?
 
 ### Ignoring standard input and output communication
 
-Have you ever used some CLIs that have a fancy way to display information with an animated input or a cool spinner? It's indeed quite cool to use those tools when you just want to use it by itself, but when you try to put those tools in a pipeline they break the whole line. Instead always write your tools by using standard communication as the primary way to receive and retrieve information, prefer to use options instead of hard coding values (a example of option is `--output=json` or `-o json`).
+Have you ever used some CLIs that have a fancy way to display information with an animated input or a cool spinner? It's indeed quite cool to use those tools when you just want to use them by themselves, but when you try to put those tools in a pipeline, they break the whole process. Instead, always write your tools by using standard communication as the primary way to receive and retrieve information, prefer to use options instead of hard-coding values (an example of an option is `--output=json` or `-o json`).
 
-In ruby it's far easier to not shoot yourself on the foot because the way we learn to get data already works pretty well with the standard input, but it's important to keep an eye on how you design your script.
+In Ruby, it's far easier to not shoot yourself in the foot because the way we learn to get data already works pretty well with the standard input, but it's important to keep an eye on how you design your script. 
 
 For example, consider this simple script called `printname.rb` example:
 
@@ -130,6 +143,32 @@ $ list_songs | sort | update_song
 ```
 
 See how `list_songs` and `update_song` are different scripts? both communicate via STDIN and STDOUT, allowing the user to pipeline through any command and receive the same behavior (for example we're piping it to sort because we want to view the list in a sorted manner.)
+
+## Bonus point: The bang operator in vim
+
+Rejoice, Vim users! This is our time to shine. Vim is a somewhat standard editor in Unix systems and this comes with a set of benefits such as interacting with binaries directly in your buffer via the `!` operator.
+
+In vim you can press `!!` in **normal mode** to populate a command like this in your minibuffer `:.!`, the command you type after the `!` will be used with the current line as STDIN, mind blowing right? Observe the example below:
+
+Consider the following script in ruby:
+
+```ruby
+#!/usr/bin/env ruby
+
+STDIN.each do |line|
+ puts "- #{line}"
+end
+```
+
+In this script we're looping over the STDIN received and printing it back to the STDOUT with a `-` on the beginning, now we can interact with vim:
+
+<a href="https://asciinema.org/a/607360" target="_blank"><img src="https://asciinema.org/a/607360.svg" /></a>
+
+Other variations of the bang command:
+- `!}`: Populate the bang command from the current line to the end of the paragraph.
+- `!/pattern`: Populate the bang command from the current line to the first find of `pattern` in the buffer.
+- `!G`: Populate the bang command from the current line to the end of the file.
+- `!4j`: Populate the bang command from the current line to 4 lines below.
 
 ## Conclusion
 
