@@ -9,20 +9,15 @@ published: false
 
 Elixir works **really** well for concurrent code because of it's functional nature and ability to run in multiple processes, but how we handle state when our code is running all over the place? Well, there is some techniques and in this article we'll learn more about it together shall we?
 
-```
-TODO:
-
-- Talvez posso remover o gen server e mandar pra um artigo parte 2
-- Adicionar imagens
-```
-
 ## Table of contents
 - [What is a process? How to use it with send and receive](#what-is-a-process-how-to-use-it-with-send-and-receive)
 - [Incrementing our experience with tasks](#incrementing-our-experience-with-tasks)
 - [Designing state with the agent wrapper](#designing-state-with-the-agent-wrapper)
-- [The last step! Providing continuous client server communication with GenServer](#the-last-step-providing-continuous-client-server-communication-with-genserver)
+- [Conclusion](#conclusion)
 
 ## What is a process? How to use it with send and receive
+
+[![Why You Should Use Erlang in 2023](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fserokell.io%2Ffiles%2Fph%2Fph8n4xcr.erlang-elixir-what-the-hell-is-this-ruby-how-it-39889435.jpg&f=1&nofb=1&ipt=78ed9f190e78446b26f6138ac55fb39da5f71aac31a84eaf8be41df28c2d2509&ipo=images)](https://serokell.io/files/ph/ph8n4xcr.erlang-elixir-what-the-hell-is-this-ruby-how-it-39889435.jpg)
 
 Processes are the answer from Elixir to concurrent programming; they're basically a continuous-running node that can send and receive messages. In fact, every function in Elixir runs inside a process. Although this sounds really expensive, it's **super** lightweight compared to threads in other languages, which empowers us developers to build incredibly scalable software with hundreds of processes running at the same time. Another great advantage of using this specifically with the Elixir language is that this language is built on top of immutability and other functional programming concepts, so we can trust that these functions are running completely isolated and without changing or maintaining global state.
 
@@ -76,12 +71,13 @@ Received: Hello World
 iex(4)>
 ```
 
-Observe that we define a function that act as a general listener using the `receive` block, this work as a switch case where we can pattern match and do a quick action, in this case we're simply printing to the STDOUT. Once we spawn this listener, it's possible to use the returned `pid` to send information using the `send/2` function that expects a PID and a value as arguments.
+Observe that we define a function that act as a general listener using the `receive` block, this work as a switch case where we can pattern match and do a quick action, in this case we're simply printing to the STDOUT. Once we spawn this listener, it's possible to use the returned `pid` to send information using the `send/2` function that expects a `PID` and a value as arguments.
 
 That way, it's possible to keep state in an immutable and separate environment such as elixir.
+
 ## Incrementing our experience with tasks
 
-Now that we've saw the fundamental aspects of handling processes, let's dive into a powerful tool: the `Task` module. This module offers an abstraction on top of the common functions `spawn` and `receive` to initiate and manage concurrent processes while waiting for results. As you delve into Elixir, you'll discover that the `Task` module allows you to start a new process that executes a function and returns a task structure. With this structure in hand, you can easily get the value from this function using the `Task.await(task)` clause, as shown below: 
+This module offers an abstraction on top of the `spawn` function while adding support for asynchronous behavior, i.e. creating function in a separate process and observing it's behavior with wait functions. As you delve into Elixir, you'll discover that the `Task` module allows you to start a new process that executes a function and returns a task structure. With this structure in hand, you can easily get the value from this function using the `Task.await(task)` clause, as shown below: 
 
 ```elixir
 iex(1)> task = Task.async(fn ->
@@ -128,5 +124,46 @@ Received message: Eat more fruits
 {:print, "Eat more fruits"}
 ```
 
+It's useful to use the `Task` module because we can get a higher level of abstraction, you must have noticed that the interface for `Task.start` and `Task.async` is the same? Yeah we can swap those and get the power of using `Task.await` and `Task.yield` on top of it, *that's the power of abstracting lower level concepts!*
 
-It's useful to use the `Task` module because we can get a higher level of abstraction, you must have noticed that the interface for `Task.start` and `Task.async` is the same? Yeah we can swap those and get the power of using `Task.await` and `Task.yield` on top of it, that's the power of abstracting lower level concepts!
+## Designing state with the agent wrapper
+
+[![Perry o Ornitorrinco (música) | Phineas e Ferb Wiki | FANDOM powered by ...](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fphineasferb%2Fimages%2F2%2F2a%2FNQUBSNR_Imagem_129.jpg%2Frevision%2Flatest%3Fcb%3D20130128131514%26path-prefix%3Dpt-br&f=1&nofb=1&ipt=2f504fcc49577dab05ca1fbbe8d0a3c5ce30ac164eaf20db8b9fb14c7db8a0c6&ipo=images)](https://vignette.wikia.nocookie.net/phineasferb/images/2/2a/NQUBSNR_Imagem_129.jpg/revision/latest?cb=20130128131514&path-prefix=pt-br)
+
+The `Agent` module provide another layer of abstraction focused on controlling state between multiple instances of a process, it act like a data structure for long running interactions.
+
+We can first start a agent instance with a initial value passed from a function return as shown below:
+
+```elixir
+iex(1)> {:ok, agent} = Agent.start_link(fn -> [] end)
+{:ok, #PID<0.110.0>}
+iex(2)> agent
+#PID<0.110.0>
+iex(3)>
+```
+
+As you can see we get a `PID` just like the other abstractions, the difference here can be observed on the usage of other methods
+
+For example we can update the original array by appending a value to it:
+
+```elixir
+iex(3)> Agent.update(agent, fn list -> ["elixir" | list] end)
+:ok
+iex(4)>
+```
+
+**That's the whole difference** of the agent abstraction, we can continuously update a state by appending immutable functions as callback and reusing the same `PID`.
+
+We also can return a particular value from the data structure by using the following function:
+
+```elixir
+iex(4)> Agent.get(agent, fn list -> list end)
+["elixir"]
+iex(5)>
+```
+
+See? it's as simple as returning the whole list from the callback function, you can imagine that it's possible to use any method from elixir to filter down this list if wanted and keep iterating over the data structure
+
+## Conclusion
+
+This is a simple introduction to this concept that is new for me, I hope it's useful for anyone reading it! And in the next articles we'll dive deeper about other topics in elixir such as Gen Servers, Supervisors, etc...
