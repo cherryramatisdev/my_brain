@@ -17,7 +17,7 @@ Elixir works **really** well for concurrent code because of it's functional natu
 
 ## What is a process? How to use it with send and receive
 
-[![Why You Should Use Erlang in 2023](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fserokell.io%2Ffiles%2Fph%2Fph8n4xcr.erlang-elixir-what-the-hell-is-this-ruby-how-it-39889435.jpg&f=1&nofb=1&ipt=78ed9f190e78446b26f6138ac55fb39da5f71aac31a84eaf8be41df28c2d2509&ipo=images)](https://serokell.io/files/ph/ph8n4xcr.erlang-elixir-what-the-hell-is-this-ruby-how-it-39889435.jpg)
+![image](https://github.com/cherryramatisdev/public_zet/assets/86631177/725725cb-003e-4659-943a-c7978e74281c)
 
 Processes are the answer from Elixir to concurrent programming; they're basically a continuous-running node that can send and receive messages. In fact, every function in Elixir runs inside a process. Although this sounds really expensive, it's **super** lightweight compared to threads in other languages, which empowers us developers to build incredibly scalable software with hundreds of processes running at the same time. Another great advantage of using this specifically with the Elixir language is that this language is built on top of immutability and other functional programming concepts, so we can trust that these functions are running completely isolated and without changing or maintaining global state.
 
@@ -128,7 +128,7 @@ It's useful to use the `Task` module because we can get a higher level of abstra
 
 ## Designing state with the agent wrapper
 
-[![Perry o Ornitorrinco (música) | Phineas e Ferb Wiki | FANDOM powered by ...](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fphineasferb%2Fimages%2F2%2F2a%2FNQUBSNR_Imagem_129.jpg%2Frevision%2Flatest%3Fcb%3D20130128131514%26path-prefix%3Dpt-br&f=1&nofb=1&ipt=2f504fcc49577dab05ca1fbbe8d0a3c5ce30ac164eaf20db8b9fb14c7db8a0c6&ipo=images)](https://vignette.wikia.nocookie.net/phineasferb/images/2/2a/NQUBSNR_Imagem_129.jpg/revision/latest?cb=20130128131514&path-prefix=pt-br)
+![image](https://github.com/cherryramatisdev/public_zet/assets/86631177/306a155b-2cc1-4af7-8a52-7aa053bf5680)
 
 The `Agent` module provide another layer of abstraction focused on controlling state between multiple instances of a process, it act like a data structure for long running interactions.
 
