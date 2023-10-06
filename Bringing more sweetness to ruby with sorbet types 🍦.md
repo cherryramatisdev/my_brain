@@ -17,13 +17,14 @@ Have you ever wanted to add type-checking to your Ruby code? Going from a rubber
 - [What about ruby 3?](#what-about-ruby-3)
 - [Editor support and configuration](#editor-support-and-configuration)
 - [Getting our hands dirty! How to create a sample API with sorbet](#getting-our-hands-dirty-how-to-create-a-sample-api-with-sorbet)
-  - [Creating a new project and initializing sorbet](#creating-a-new-project-and-initializing-sorbet) - [Defining our main router file](#defining-our-main-router-file)
+  - [Creating a new project and initializing sorbet](#creating-a-new-project-and-initializing-sorbet) 
+  - [Defining our main router file](#defining-our-main-router-file)
   - [Creating a service](#creating-a-service)
 - [Conclusion](#conclusion)
 
 ## Why do we need types at all?
 
-![type check](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F207hgd.jpg&f=1&nofb=1&ipt=0692242eb00dd0079a58045ab579a889de9628fafe7fc5f0c2c19d0b82f2d352&ipo=images )
+![type check](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F207hgd.jpg&f=1&nofb=1&ipt=0692242eb00dd0079a58045ab579a889de9628fafe7fc5f0c2c19d0b82f2d352&ipo=images)
 
 If you have been in the Ruby community for the past couple of years, it's possible that you're not a super fan of types or that this concept never passed through your mind, and **that's totally cool**. I myself love the dynamic and meta-programming nature of Ruby, and honestly, by the time of this article's writing, we aren't on the level of [OCaml](https://ocaml.org) for type checking and inference, but still, there are a couple of nice things that types with sorbet bring to the table:
 
