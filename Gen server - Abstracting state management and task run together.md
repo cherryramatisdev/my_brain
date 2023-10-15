@@ -7,7 +7,7 @@ canonical_url:
 published: false
 ---
 
-We already know that everything in elixir is a process and that we can maintain a PID through a long-running process to receive and create states, both by writing our own module or using predefined "data structures" like `Agent` right? Another known fact is that we, as developers, love to write abstractions over known constructs. So allow me to introduce this cool abstraction around the long-running process called `GenServer`.
+In Elixir, every function runs inside a separate process, and we can deal with processes in a very natural way offered by the language. It's possible to manage state between multiple long-running processes through known abstractions such as `Agent`. In this article, we'll talk a little about an abstraction that allows the management of long-running processes with state and message communication for running functions accordingly! I hope it'll be fun and easy to understand.
 
 ## Table of Contents
 
@@ -18,12 +18,12 @@ We already know that everything in elixir is a process and that we can maintain 
 
 ## What is Gen server and what problem it solves
 
-It's really important to understand what problem we're trying to solve before we even consider what implementation we should try, right? So the problem here is a lack of abstraction. Today, we can write our own module that handles some state and implement a method that uses the `receive` block to create a "mailbox", or we can use simple abstractions such as `Agent` and `Task` to either hold state only or manage asynchronous tasks only.
+It's really important to understand what problem we're trying to solve before we even consider which implementation we should try, right? So the problem here is lack of abstraction around long running processes. Today, we can write our own module that handles some state and implement a method that uses the `receive` block to create a "mailbox", or we can use simple abstractions such as `Agent` and `Task` to either hold state only or manage asynchronous tasks only.
 
 First, let's rewind a bit and understand what we do to share state in a process using simpler abstractions. If you want to know more in detail about those modules, reach out to the previous article linked at the beginning. :)
 ### Agent
 
-The `Agent` module provides a simple and efficient way to manage state, and it's pretty easy to use, as you can see below in the example:
+The `Agent` module provides a simple and efficient way to manage state, personally I view this module as an data structure for the process architecture because you can control any primitive value through a pid and getters/setters. It's pretty easy to use as you can see below in the example:
 
 ```elixir
 # Creating an agent
@@ -37,9 +37,11 @@ Agent.get(agent, fn list -> list end)
 Agent.get(agent, fn list -> Enum.find(fn item -> item == "cherry" end) end)
 ```
 
+As you can see, we have a getter and a setter method that both accept a function callback to manage the internal state, with this simple API we can manage it just an data structure.
+
 ### Task
 
-Another abstraction that we can use with processes is the `Task` module. It works around the idea of handling asynchronous processes (specifically abstracting the `spawn` function), has a **really** simple API, and works like the following example:
+Another abstraction that we can use with processes is the `Task` module that works around the idea of handling asynchronous processes (specifically abstracting the `spawn` function). It has a **really** simple API, and works like the following example:
 
 ```elixir
 # To initiate a new task
@@ -83,13 +85,12 @@ Since the `Agent` module didn't provide enough abstraction, you're forced to pro
 
 ```elixir
 # Client code
-def put(bucket, key, value) do
-  # Send the server a :put "instruction"
-  GenServer.call(bucket, {:put, key, value})
+def put(pid, key, value) do
+  GenServer.call(pid, {:insert, key, value})
 end
 
 # Server code
-def handle_call({:put, key, value}, _from, state) do
+def handle_call({:insert, key, value}, _from, state) do
   {:reply, :ok, Map.put(state, key, value)}
 end
 ```
@@ -129,7 +130,7 @@ end
 - The `handle_call` function enters the realm of "mailbox" receivers, this function will be evoked when we use `GenServer.call` with a specific action that will be pattern-matched (`:list_all` in the example). It's also important to point out that these functions will be run **synchronously.**
 - The `handle_cast` function serves the same purpose as the `handle_call`; it'll be called from a `GenServer.cast` call, and its pattern is matched correctly. The important difference is that this function will run **asynchronously**.
 
-Now that we understand the server part, let's complement it with some client-code API for us to call on the REPL:
+After understanding the server part, let's complement it with some client-code API for us to call on the REPL:
 
 ```elixir
 defmodule Example do
@@ -150,9 +151,9 @@ defmodule Example do
 end
 ```
 
-Now that we saw the server handle functions, the client API is as easy as using the `Agent` or the `Task`, probably those two smashed together because you can have sync code (call) and async code (cast) being used.
+The client code in this specific case will serve as an easy API for the external world, so we don't need to keep referring to the `GenServer` module always. With this set of methods we can handle sync code (the list_names method with `call`) and async code (the add_name method with `cast`) easily!
 
-Observe also that on our `handle_cast` for `:insert` we're using the timer to sleep 5 seconds, below we'll show how this works on the REPL to understand the difference between async and sync calls.
+Observe also that on our `handle_cast` for `:insert` we're using the timer to sleep 5 seconds on purpose!, below we'll show how this works on the REPL to understand the difference between async and sync calls.
 
 > To view the correct delay, watch the below video:
 
@@ -170,6 +171,8 @@ iex(3)> Example.add_name(pid, "Cherry")
 iex(4)> Example.list_names(pid)
 ["Cherry"]
 ```
+
+The `add_name` method returned instantly, but the `list_names` method suffered from the timer that we imposed. The balance between those two concepts turn this abstraction really useful and flexible!
 
 ## References
 
