@@ -22,7 +22,17 @@ The ruby programming language is known for two major facts: One is it's core phi
 - [Conclusion](#conclusion)
 
 ## What is metaprogramming anyway?
+
+Metaprogramming is a concept where you write a program to write a program, confusing huh? But trust me it's quite simple, imagine the following scenario:
+
+You create a function that write another file with a specific functionality, or even append content on the same file with the whole implementation for a class or a object or whatever, this is code creating more code got it? This is metaprogramming!
+
+A cool example of metaprogramming are DSLs (Domain specific languages) that define a specific syntax within the same language to express far more complex concepts, such as querying a database or defining routes. It's not new that the ruby ecossystem uses a lot of metaprogramming so we can keep writing elegant and clean code with that "magit" feel to it.
+
 ## In Ruby everything is an object, what does that mean?
+
+It's possible that you saw the famous phrase "In ruby, everything is an object", but what does that even mean and how it's related to metaprogramming at all?
+
 ## But what about rails? How this framework applies that concept for maximum developer experience
 ## How to define methods dynamically
 ## Using hooks to detect moments on the instantiation of the class
