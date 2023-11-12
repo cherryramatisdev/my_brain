@@ -55,8 +55,7 @@ Outra coisa importante de se mencionar, esse bloco especifico acima é extremame
 
 > PS: Como markdown não permite um bloco dentro de um bloco, vou precisar mostrar com um screenshot.
 
-
-![[Pasted image 20231112112559.png]]
+![Bloco de codigo](https://github.com/cherryramatisdev/public_zet/assets/86631177/61de98aa-e7bb-4baa-91c4-afca9db2991f)
 
 Após os símbolos de apostrofo, podemos incluir o nome da linguagem (no meu caso ruby) para que o dev.to possa habilitar o syntax highlighting especifico para essa linguagem de programação.
 
@@ -80,7 +79,7 @@ Listas em markdown são bem simples de serem usadas e elas possuem dois tipos **
 
 O problema de usar as listas numeradas no dev.to é que elas ficam desalinhadas no momento de escrita desse artigo como podemos ver no exemplo abaixo:
 
-![[Pasted image 20231112113823.png]]
+![Listas no dev.to](https://github.com/cherryramatisdev/public_zet/assets/86631177/0ab1a9c1-efb3-40d5-b90f-7cacb7d20f77)
 
 Portanto de forma geral eu sempre assumo o uso de listas não ordenadas sempre que preciso utilizar uma lista no meu texto, facilita bastante a vida e deixa alinhado com o resto do paragrafo.
 
@@ -118,9 +117,9 @@ Agora que temos uma noção interessante de como podemos marcar nosso texto para
 
 Primeiro é muito importante definir o paragrafo inicial de forma a chamar o leitor para o problema ou a situação que você vai dissecar ao longo do artigo, fazemos isso principalmente pois esse primeiro paragrafo é o que o dev.to vai usar para mandar por email em suas newsletter ou outras comunicações de marketing. Um exemplo de paragrafo inicial pode ser achado nesse mesmo artigo que você esta lendo ou em alguns outros que deixo abaixo:
 
-![[Pasted image 20231112120801.png]]
+![Paragrafo inicial exemplo 1](https://github.com/cherryramatisdev/public_zet/assets/86631177/a76e0a72-60a7-4864-b2e9-f43922a8e0fb)
 
-![[Pasted image 20231112120819.png]]
+![Paragrafo inicial exemplo 2](https://github.com/cherryramatisdev/public_zet/assets/86631177/64fc0d55-eed4-4c81-b4cf-193cf0d594a6)
 
 A ideia é sempre utilizar essas perguntas e pausas no texto para que possamos alcançar uma comunicação direta e bem conversacional, sempre tentando apresentar a situação da maneira mais geral possível para que quem esteja lendo fique com bastante curiosidade e vontade de ler.
 
