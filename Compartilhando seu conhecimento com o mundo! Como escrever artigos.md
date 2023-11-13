@@ -20,21 +20,20 @@ Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto espe
 - [Conclusão e agradecimentos](#conclusao-e-agradecimentos)
 
 ## Método de Feynman e por que produzir conteúdo
-![Feynman method](https://github.com/cherryramatisdev/public_zet/assets/86631177/d37446cf-861b-47bb-96f8-f38dbc99a91d)
 
-Primeiramente precisamos discutir o por que devemos compartilhar conteúdo seja em formato textual (o foco desse artigo) ou em qualquer outro formato. Para iniciar essa discussão é importante entender o que é o método de Feynman e como ele pode nos ajudar a aprender 10 vezes mais com confiança e domínio do assunto.
+Primeiramente precisamos discutir o porquê devemos compartilhar conteúdo, seja em formato textual (o foco desse artigo) ou em qualquer outro formato. Para iniciar essa discussão é importante entender o que é o método de Feynman e como ele pode nos ajudar a aprender 10 vezes mais com confiança e domínio do assunto.
 
-O método de Feynman foi criado por um físico muito importante chamado Richard Feynman com o objetivo de desenvolver uma abordagem nova ao aprendizado, essa nova proposta assume uma verdade central: "Se você não consegue explicar algo de maneira clara e simples, então você ainda não entendeu completamente". 
+O método de Feynman foi criado por um físico muito importante chamado Richard Feynman visando desenvolver uma abordagem nova ao aprendizado, essa nova proposta assume uma verdade central: "Se você não consegue explicar algo de maneira clara e simples, então você ainda não entendeu completamente".
 
-Essa frase nos ajuda muito a pensar em como nosso aprendizado deve ser estruturado, pois a partir do momento que começamos a pensar em ensinar o que estamos estudando focamos muito mais em dominar as bases essenciais do assunto e se preparar para duvidas que te forçam a olhar o problema por outro lado completamente diferente.
+Essa frase nos ajuda muito a pensar em como nosso aprendizado deve ser estruturado, pois a partir do momento que começamos a pensar em ensinar o que estamos estudando focamos muito mais em dominar as bases essenciais do assunto e se preparar para dúvidas que te forçam a olhar o problema, por outro lado, completamente diferente.
 
 Ao se preparar para situações como essas, o resultado claro é uma excelente confiança e domínio sobre o assunto em questão que estava sendo estudado.
 
-Eu particularmente amo esse método, o único problema dele é que quando saímos do ambiente acadêmico fica muito dificil de achar pessoas que se interessam pelo mesmo assunto que você esta estudando no momento, seja por não ter pessoas de TI no ciclo de amizade ou simplesmente por ter interesse em assuntos específicos. 
+Eu particularmente amo esse método, o único problema dele é que quando saímos do ambiente acadêmico fica muito difícil de achar pessoas que se interessam pelo mesmo assunto que você esta estudando no momento, seja por não ter pessoas de TI no ciclo de amizade ou simplesmente por ter interesse em assuntos específicos. 
 
-Para esse problema temos uma solução muito incrível chamada "Learning in public"! Essa prática consiste em compartilhar seu aprendizado online em comunidades de tecnologia, seja produzindo videos, fazendo streams ou no objetivo desse artigo: escrevendo! 
+Para esse problema temos uma solução muito incrível chamada "Learning in public"! Essa prática consiste em compartilhar seu aprendizado online em comunidades de tecnologia, seja produzindo vídeos, fazendo live streams ou no objetivo desse artigo: escrevendo!
 
-Plataformas como dev.to (que você usando para ler agora :D) tem como objetivo tornar a ideia de "Learning in public" cada vez mais simples e próxima de quem esta consumindo, pois agora é possível produzir artigos que vão chegar em pessoas com os mesmos interesses que os nossos que podem: aprender, tirar duvidas ou mesmo sugerir mudanças e corrigir pensamentos. Incrível né? 
+Plataformas como dev.to (que você usando para ler agora :D) visam tornar a ideia de "Learning in public" cada vez mais simples e próxima de quem está consumindo, pois agora é possível produzir artigos que vão chegar em pessoas com os mesmos interesses que os nossos que podem: aprender, tirar dúvidas ou mesmo sugerir mudanças e corrigir pensamentos. Incrível né?
 
 ## Coletando ideias e se motivando para escrever
 
@@ -42,7 +41,7 @@ Plataformas como dev.to (que você usando para ler agora :D) tem como objetivo t
 
 O processo de inspiração é provavelmente uma das fases mais chatinhas antes de produzir um artigo online, muitas vezes ficamos presos em um loop infinito de técnicas mirabolantes para ter ideias incríveis quando, na verdade, a solução acaba sendo muito simples: aceite suas ideias e consuma o máximo de conteúdos possível. 
 
-A forma mais prática de encontrar ideias e de construir sua própria linguagem é ler o que as outras pessoas já produzem sobre os temas que lhe interessam, quer se trate de uma linguagem de programação, de um tema específico em TI, etc; esse consumo de conteúdo vai vir de diversas fontes diferentes como artigos técnicos, videos no youtube, tweets da bolha tech, discussões no Github e muitos outros locais possíveis.
+A forma mais prática de encontrar ideias e de construir sua própria linguagem é ler o que as outras pessoas já produzem sobre os temas que lhe interessam, quer se trate de uma linguagem de programação, de um tema específico em TI, etc; esse consumo de conteúdo vem de diversas fontes diferentes como artigos técnicos, vídeos no YouTube, tweets da bolha Tech, discussões no Github e muitos outros locais possíveis.
 
 Bom, sei que falando assim parece simplificar algo que não é tão simples assim e eu concordo com você! Não é só ler ou assistir tudo o que existe na internet que vai nos tornar capazes de produzir os mesmos conteúdos, a habilidade mais importante que vai destacar essas pessoas é **organizar as ideias que chegam no cérebro**.
 
@@ -52,11 +51,11 @@ Nosso cérebro é uma excelente maquina de absorção de informação, praticame
 
 Manter um *segundo cérebro* é uma prática muito famosa entre escritores e pesquisadores, consiste em um local físico ou virtual onde você copia pequenos pedaços de conteúdo que consumiu junto de uma observação utilizando suas próprias palavras sobre o assunto. Esse amontoado de anotações vai compor o seu *segundo cérebro* e vai te empoderar com a habilidade de achar qualquer conteúdo rapidamente e referenciar seus autores sem nunca esquecer nada!
 
-Para resumir a história, consuma o máximo de conteúdo possível, armazene-o em um segundo cérebro que pode ser armazenado e pesquisado e finalmente se desafie a escrever! Seja sobre um assunto que quer aprender, sobre algo específico que aprendeu recentemente ou até mesmo algo que domina a muitos anos.
+Para resumir a história, consuma o máximo de conteúdo possível, armazene-o em um segundo cérebro que pode ser armazenado e pesquisado e finalmente se desafie a escrever! Seja sobre um assunto que quer aprender, sobre algo específico que aprendeu recentemente ou até mesmo algo que domina há muitos anos.
 
 ## Entendendo a plataforma e achando a propria linguagem
 
-Entender a plataforma e o público que vamos atingir escrevendo nossos conteúdos é muito importante para podermos filtrar como vamos estruturar os artigos de forma geral certo? Na *minha opinião*, o [dev.to](https://dev.to) é uma plataforma bem informal que valoriza muito conteúdos no formato de tutoriais com um estilo conversacional e direto ao ponto, com essa informação podemos deduzir algumas de estruturar nossos artigos para que possamos passar nossa ideia em um modelo conhecido pelos leitores.
+Entender a plataforma e o público que vamos atingir escrevendo nossos conteúdos é muito importante para podermos filtrar como vamos estruturar os artigos de forma geral certo? Na *minha opinião*, o [dev.to](https://dev.to) é uma plataforma bem informal que valoriza muito conteúdos no formato de tutoriais com um estilo conversacional e direto ao ponto, com essa informação podemos deduzir algumas de estruturar nossos artigos para podermos passar nossa ideia em um modelo conhecido pelos leitores.
 
 Isso significa que tudo o que você vai produzir são tutoriais diretos e informais?  De forma alguma! Só significa que você pode moldar o seu conteúdo para conter essa linguagem mais informal, conversacional e direta mesmo que o tema tratado seja super complexo, isso inclusive vira um desafio muito interessante de simplificar o complexo. 
 
@@ -167,6 +166,8 @@ Recomendo sempre ter três *títulos satélites* que vão nortear o seu artigo e
 
 Ao redor desses três principais títulos, podemos desenvolver nosso artigo com uma escrita ilustrativa e que apresente exemplos práticos ou analogias, facilitando a visualização tanto do problema quanto da solução pelo leitor. É importante ressaltar também o cuidado ao aprofundar muito nas analogias, elas são extremamente uteis, mas podem ser um tiro no pé quando você abusa e nunca volta para o mundo real com uma solução e explicação clara.
 
+Uma dica geral ao redor da estrutura do artigo é manter o sentimento geral da leitura leve, portanto é super aconselhável utilizar imagens (seja um meme para descontrair ou um gráfico para ilustrar melhor o ponto apresentado), como a plataforma do dev.to comporta artigos técnicos mais informais, abusar dessa linguagem mais próxima é uma estratégia muito certeira.
+
 ## Como revisar e melhorar a escrita
 ![code review meme](https://github.com/cherryramatisdev/public_zet/assets/86631177/ba71cb93-5734-423f-ab32-7718bf5bca5d)
 
@@ -184,4 +185,14 @@ No que se entende por revisão temos algumas ferramentas bem interessantes que n
 
 ## Conclusão e agradecimentos
 
-Esse é o último artigo que estou postando seguindo o desafio [100 dias de código](https://www.100diasdecodigo.dev), foi um desafio muito intenso e com muito aprendizado onde eu descobri uma nova paixão: escrever e compartilhar conhecimento! Não tenho nem palavras para agradecer a comunidade da He4rt por ter me apoiado 100% nessa jornada imensa. Espero que esse artigo seja útil para quem esteja lendo e que inspire qualquer um a compartilhar conhecimento online para podermos criar uma internet mais segura e rica em informação. May the force be with you! 🍒
+Esse é o último artigo que estou postando seguindo o desafio [100 dias de código](https://www.100diasdecodigo.dev), foi um desafio muito intenso e com muito aprendizado onde eu descobri uma nova paixão: escrever e compartilhar conhecimento! Não tenho nem palavras para agradecer a comunidade da He4rt por ter me apoiado 100% nessa jornada imensa. Espero que esse artigo seja útil para quem esteja lendo e que inspire qualquer um a compartilhar conhecimento online para podermos criar uma internet mais segura e rica em informação. 
+
+Gostaria também de deixar um agradecimento especial aos revisores desse artigo:
+
+- [Anibal Sólon](https://github.com/anibalsolon)
+- [Alicia Marianne](https://github.com/m4rri4nne)
+- [Miguel S. Barbosa](https://github.com/m1guelsb)
+- [Clinton Rocha](https://github.com/Clintonrocha98)
+- [Samuel Rodrigues](https://github.com/SamucaDev)
+
+May the force be with you! 🍒
