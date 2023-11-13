@@ -11,6 +11,7 @@ Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto espe
 
 ## Table of contents
 
+- [Método de Feynman e por que produzir conteúdo](#método-de-feynman-e-por-que-produzir-conteúdo)
 - [Coletando ideias e se motivando para escrever](#coletando-ideias-e-se-motivando-para-escrever)
 - [Entendendo a plataforma e achando a propria linguagem](#entendendo-a-plataforma-e-achando-a-propria-linguagem)
 - [Aprendendo markdown e dicas gerais para uma boa formatação](#aprendendo-markdown-e-dicas-gerais-para-uma-boa-formatacao)
@@ -18,11 +19,38 @@ Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto espe
 - [Como revisar e melhorar a escrita](#como-revisar-e-melhorar-a-escrita)
 - [Conclusão e agradecimentos](#conclusao-e-agradecimentos)
 
+## Método de Feynman e por que produzir conteúdo
+[![The Feynman Technique: How to Learn Anything Quickly](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.doist.com%2Fwp-content%2Fuploads%2F2020%2F02%2FTheFeynmanTechnique_thumbnail-1088x618.png&f=1&nofb=1&ipt=8c2ec7b1a713c84313ba44190d77cbf2ec3493b3e86a92ac5858df5052812cb3&ipo=images)](https://blog.doist.com/wp-content/uploads/2020/02/TheFeynmanTechnique_thumbnail-1088x618.png)
+
+Primeiramente precisamos discutir o por que devemos compartilhar conteúdo seja em formato textual (o foco desse artigo) ou em qualquer outro formato. Para iniciar essa discussão é importante entender o que é o método de Feynman e como ele pode nos ajudar a aprender 10 vezes mais com confiança e domínio do assunto.
+
+O método de Feynman foi criado por um físico muito importante chamado Richard Feynman com o objetivo de desenvolver uma abordagem nova ao aprendizado, essa nova proposta assume uma verdade central: "Se você não consegue explicar algo de maneira clara e simples, então você ainda não entendeu completamente". 
+
+Essa frase nos ajuda muito a pensar em como nosso aprendizado deve ser estruturado, pois a partir do momento que começamos a pensar em ensinar o que estamos estudando focamos muito mais em dominar as bases essenciais do assunto e se preparar para duvidas que te forçam a olhar o problema por outro lado completamente diferente.
+
+Ao se preparar para situações como essas, o resultado claro é uma excelente confiança e domínio sobre o assunto em questão que estava sendo estudado.
+
+Eu particularmente amo esse método, o único problema dele é que quando saímos do ambiente acadêmico fica muito dificil de achar pessoas que se interessam pelo mesmo assunto que você esta estudando no momento, seja por não ter pessoas de TI no ciclo de amizade ou simplesmente por ter interesse em assuntos específicos. 
+
+Para esse problema temos uma solução muito incrível chamada "Learning in public"! Essa prática consiste em compartilhar seu aprendizado online em comunidades de tecnologia, seja produzindo videos, fazendo streams ou no objetivo desse artigo: escrevendo! 
+
+Plataformas como dev.to (que você usando para ler agora :D) tem como objetivo tornar a ideia de "Learning in public" cada vez mais simples e próxima de quem esta consumindo, pois agora é possível produzir artigos que vão chegar em pessoas com os mesmos interesses que os nossos que podem: aprender, tirar duvidas ou mesmo sugerir mudanças e corrigir pensamentos. Incrível né? 
+
 ## Coletando ideias e se motivando para escrever
 
-O processo de inspiração é provavelmente uma das fases mais chatinhas antes de produzir um artigo online, muitas vezes ficamos presos em um loop infinito de técnicas mirabolantes para ter ideias incríveis quando, na verdade, a solução acaba sendo muito simples: aceite suas ideias e consuma o máximo de conteúdos possível. A forma mais simples de encontrar ideias e de construir sua própria linguagem é ler o que as pessoas já produzem sobre os temas que lhe interessam, quer se trate de uma linguagem de programação, de um tema específico em TI, etc. Seus primeiros artigos não vão ser iguais ao de uma pessoa que produz há muitos anos e aceitar isso vai fazer com que evolua muito mais rápido e com muito mais consistência.
+O processo de inspiração é provavelmente uma das fases mais chatinhas antes de produzir um artigo online, muitas vezes ficamos presos em um loop infinito de técnicas mirabolantes para ter ideias incríveis quando, na verdade, a solução acaba sendo muito simples: aceite suas ideias e consuma o máximo de conteúdos possível. 
 
-Outra dica importante é manter um *segundo cérebro*, um local físico ou virtual onde você copia partes de artigos que leu na internet com observações próprias de forma super informal e separada. Isto vai ajudar a construir um repertório e a ganhar mais confiança ao escrever, uma vez que pode citar frases que leu em outros locais e abrir portas para muito mais contexto. Afinal não podemos confiar no nosso próprio cérebro para lembrar de tudo o que consumimos, não é mesmo?
+A forma mais prática de encontrar ideias e de construir sua própria linguagem é ler o que as outras pessoas já produzem sobre os temas que lhe interessam, quer se trate de uma linguagem de programação, de um tema específico em TI, etc; esse consumo de conteúdo vai vir de diversas fontes diferentes como artigos técnicos, videos no youtube, tweets da bolha tech, discussões no Github e muitos outros locais possíveis.
+
+Bom, sei que falando assim parece simplificar algo que não é tão simples assim e eu concordo com você! Não é só ler ou assistir tudo o que existe na internet que vai nos tornar capazes de produzir os mesmos conteúdos, a habilidade mais importante que vai destacar essas pessoas é **organizar as ideias que chegam no cérebro**.
+
+### Mantendo um segundo cérebro
+
+Nosso cérebro é uma excelente maquina de absorção de informação, praticamente uma esponja que guarda todas as informações ao nosso redor. O grande problema dessa maquina é que ela se tornou péssima em organização com o tempo, isso aconteceu principalmente para poupar energia já que não precisamos lembrar de tudo o tempo todo, mas sabendo disso o que podemos fazer para guardar as informações que queremos de forma organizada? Well well well jovem gafanhoto, precisamos parar de confiar no nosso cérebro é claro!
+
+Manter um *segundo cérebro* é uma prática muito famosa entre escritores e pesquisadores, consiste em um local físico ou virtual onde você copia pequenos pedaços de conteúdo que consumiu junto de uma observação utilizando suas próprias palavras sobre o assunto. Esse amontoado de anotações vai compor o seu *segundo cérebro* e vai te empoderar com a habilidade de achar qualquer conteúdo rapidamente e referenciar seus autores sem nunca esquecer nada!
+
+Para resumir a história, consuma o máximo de conteúdo possível, armazene-o em um segundo cérebro que pode ser armazenado e pesquisado e finalmente se desafie a escrever! Seja sobre um assunto que quer aprender, sobre algo específico que aprendeu recentemente ou até mesmo algo que domina a muitos anos.
 
 ## Entendendo a plataforma e achando a propria linguagem
 
@@ -30,7 +58,7 @@ Entender a plataforma e o público que vamos atingir escrevendo nossos conteúdo
 
 Isso significa que tudo o que você vai produzir são tutoriais diretos e informais?  De forma alguma! Só significa que você pode moldar o seu conteúdo para conter essa linguagem mais informal, conversacional e direta mesmo que o tema tratado seja super complexo, isso inclusive vira um desafio muito interessante de simplificar o complexo. 
 
-*PS: Essa habilidade de simplificar o complexo vai te acompanhar para o resto da sua vida profissional, então pratique bastante*
+> A habilidade de simplificar o complexo vai te acompanhar para o resto da sua vida profissional, é importantíssimo a criação de analogias e exemplos para que facilite o entendimento e a identificação com os problemas apresentados e as soluções propostas.
 
 ## Aprendendo markdown e dicas gerais para uma boa formatação
 
@@ -40,7 +68,7 @@ A forma para produzirmos nossos artigos no dev.to é utilizando uma linguagem de
 
 ### O básico sobre manipulação de texto e blocos de código
 
-Markdown nos permite marcar partes do nosso texto com estruturas super básicas e necessárias como negrito, itálico, níveis de título, etc. Abaixo vamos ver rapidamente como realizar cada uma das ações com a sintaxe correta.
+Markdown nos permite marcar partes do nosso texto com estruturas super básicas e necessárias como negrito, itálico, highlight, níveis de título, etc. Abaixo vamos ver rapidamente como realizar cada uma das ações com a sintaxe correta.
 
 ```
 # Primeiro titulo equivalente a um h1
@@ -48,17 +76,20 @@ Markdown nos permite marcar partes do nosso texto com estruturas super básicas 
 ### Terceiro titulo equivalente a um h3
 #### Quarto titulo equivalente a um h4
 
+`Texto em highlight`
 **Texto em negrito**
 *Texto em itálico*
 ```
 
+Esses artifícios da linguagem markdown nos permitem controlar a narrativa a nosso favor e deixar a leitura mais simples de seguir, utilizando **bold** no meio do texto para chamar a atenção, deixar explicito um `termo técnico` usando highlight ou até mesmo utilizando imagens ilustrativas que introduzem o ponto do parágrafo enquanto mantém o clima geral do texto muito mais gostoso de ler.
+
 Outra coisa importante de se mencionar é o bloco especifico que usei acima, ele é extremamente útil quando vamos escrever artigos técnicos, tanto, pois ele permite um destaque maior a um bloco de texto quanto ele permite habilitar syntax highlighting caso esteja escrevendo um bloco de código, ele é utilizado da seguinte maneira:
 
-> PS: Como markdown não permite um bloco dentro de um bloco optei por mostrar com um screenshot:
+> Disclaimer: Como markdown não permite um bloco dentro de um bloco optei por mostrar com um screenshot:
 
 ![Bloco de codigo](https://github.com/cherryramatisdev/public_zet/assets/86631177/61de98aa-e7bb-4baa-91c4-afca9db2991f)
 
-Após os símbolos de apostrofo, podemos incluir o nome da linguagem (no meu caso ruby) para que o dev.to possa habilitar o syntax highlighting especifico para essa linguagem de programação.
+Após os símbolos de `backtick`, podemos incluir o nome da linguagem (no meu caso ruby) para que o dev.to possa habilitar o syntax highlighting especifico para essa linguagem de programação.
 
 ### Tabela de conteúdo
 
@@ -132,7 +163,7 @@ Recomendo sempre ter três *títulos satélites* que vão nortear o seu artigo e
 - `Prós e contras`: Nesse momento vamos deixar claro os prós e contras da solução que vai ser apresentada no artigo, seja ela uma arquitetura, um padrão de código, uma linguagem, framework, etc. A existência desse paragrafo pode ser bem situacional dependendo do seu tema, mas costuma ser bem útil caso esteja apresentando uma solução em forma de tutorial!
 - `Conclusão`: Esse ponto é mais uma opinião do que uma regra geral, mas eu acho muito importante ter um parágrafo onde vai ser indicado o final do processo de leitura, assim podemos deixar argumentos finais, agradecimentos, contato e qualquer outra mensagem interessante.
 
-Ao redor desses três títulos iniciais, o resto do artigo vai ser definido tentando sempre aprofundar os temas e resolvê-los com conclusões simples e diretas.
+Ao redor desses três principais títulos, podemos desenvolver nosso artigo com uma escrita ilustrativa e que apresente exemplos práticos ou analogias, facilitando a visualização tanto do problema quanto da solução pelo leitor. É importante ressaltar também o cuidado ao aprofundar muito nas analogias, elas são extremamente uteis, mas podem ser um tiro no pé quando você abusa e nunca volta para o mundo real com uma solução e explicação clara.
 
 ## Como revisar e melhorar a escrita
 
