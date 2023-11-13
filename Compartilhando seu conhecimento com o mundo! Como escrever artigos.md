@@ -20,7 +20,7 @@ Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto espe
 - [Conclusão e agradecimentos](#conclusao-e-agradecimentos)
 
 ## Método de Feynman e por que produzir conteúdo
-[![The Feynman Technique: How to Learn Anything Quickly](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.doist.com%2Fwp-content%2Fuploads%2F2020%2F02%2FTheFeynmanTechnique_thumbnail-1088x618.png&f=1&nofb=1&ipt=8c2ec7b1a713c84313ba44190d77cbf2ec3493b3e86a92ac5858df5052812cb3&ipo=images)](https://blog.doist.com/wp-content/uploads/2020/02/TheFeynmanTechnique_thumbnail-1088x618.png)
+![Feynman method](https://github.com/cherryramatisdev/public_zet/assets/86631177/d37446cf-861b-47bb-96f8-f38dbc99a91d)
 
 Primeiramente precisamos discutir o por que devemos compartilhar conteúdo seja em formato textual (o foco desse artigo) ou em qualquer outro formato. Para iniciar essa discussão é importante entender o que é o método de Feynman e como ele pode nos ajudar a aprender 10 vezes mais com confiança e domínio do assunto.
 
@@ -37,6 +37,8 @@ Para esse problema temos uma solução muito incrível chamada "Learning in publ
 Plataformas como dev.to (que você usando para ler agora :D) tem como objetivo tornar a ideia de "Learning in public" cada vez mais simples e próxima de quem esta consumindo, pois agora é possível produzir artigos que vão chegar em pessoas com os mesmos interesses que os nossos que podem: aprender, tirar duvidas ou mesmo sugerir mudanças e corrigir pensamentos. Incrível né? 
 
 ## Coletando ideias e se motivando para escrever
+
+![writing meme](https://github.com/cherryramatisdev/public_zet/assets/86631177/66b243e4-5d12-4901-929f-d458db2b6fe0)
 
 O processo de inspiração é provavelmente uma das fases mais chatinhas antes de produzir um artigo online, muitas vezes ficamos presos em um loop infinito de técnicas mirabolantes para ter ideias incríveis quando, na verdade, a solução acaba sendo muito simples: aceite suas ideias e consuma o máximo de conteúdos possível. 
 
@@ -166,6 +168,8 @@ Recomendo sempre ter três *títulos satélites* que vão nortear o seu artigo e
 Ao redor desses três principais títulos, podemos desenvolver nosso artigo com uma escrita ilustrativa e que apresente exemplos práticos ou analogias, facilitando a visualização tanto do problema quanto da solução pelo leitor. É importante ressaltar também o cuidado ao aprofundar muito nas analogias, elas são extremamente uteis, mas podem ser um tiro no pé quando você abusa e nunca volta para o mundo real com uma solução e explicação clara.
 
 ## Como revisar e melhorar a escrita
+![code review meme](https://github.com/cherryramatisdev/public_zet/assets/86631177/ba71cb93-5734-423f-ab32-7718bf5bca5d)
+
 
 Bom, agora que temos uma boa ideia de como estruturar nosso artigo, como mantê-lo bonito utilizando Markdown e como ponderar nossa linguagem para a plataforma especifica, o que falta? Bom, agora o que falta é entender que não somos perfeitos e erramos, portanto, precisamos de uma boa estratégia para revisar o artigo que acabamos de produzir com nossas técnicas aprendidas.
 
