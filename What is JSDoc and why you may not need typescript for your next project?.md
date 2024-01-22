@@ -46,7 +46,7 @@ function foo(a, b) {
 
 That produces the following output using the [tsserver LSP](https://github.com/typescript-language-server/typescript-language-server):
 
-![[Pasted image 20240122101811.png]]
+![Output from tsserver using jsdoc](https://github.com/cherryramatisdev/public_zet/assets/86631177/28e65363-5b96-44f2-90cd-26e90bc79bb0)
 
 With that markup language, we can define text-related information such as function descriptions, error cases (throws), and language-specific details like type signatures for parameters and return values that *populate TypeScript's own signatures*, as you can see in the screenshot.
 
@@ -140,7 +140,7 @@ After defining our sample code, we can use the full power of the typescript lint
 
 And we can finally run our command to check the entire code and see a type error (that I hope you already saw before 👀):
 
-![[Pasted image 20240122174717.png]]
+![Type error from tsserver](https://github.com/cherryramatisdev/public_zet/assets/86631177/b4dc659a-cd2c-4b61-9b4e-c6829f697633)
 
 ## Conclusion
 
