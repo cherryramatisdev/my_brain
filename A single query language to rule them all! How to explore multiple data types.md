@@ -13,10 +13,10 @@ Has anyone being in that situation as a developer where you need to provide some
 
 - [Why even consider having SQL everywhere?](#why-even-consider-having-sql-everywhere)
 - [SQL like queries for every filetype](#sql-like-queries-for-every-filetype)
-	- [Aggregating the songs by album](#sql-like-queries-for-every-filetype#aggregating-the-songs-by-album)
-	- [Filtering by specific album](#sql-like-queries-for-every-filetype#filtering-by-specific-album)
-	- [Merging two different data sources](#sql-like-queries-for-every-filetype#merging-two-different-data-sources)
-	- [Looking into more file types](#sql-like-queries-for-every-filetype#looking-into-more-file-types)
+	- [Aggregating the songs by album](#aggregating-the-songs-by-album)
+	- [Filtering by specific album](#filtering-by-specific-album)
+	- [Merging two different data sources](#merging-two-different-data-sources)
+	- [Looking into more file types](#looking-into-more-file-types)
 - [The built-in SPL language as an alternative to SQL query language](#the-built-in-spl-language-as-an-alternative-to-sql-query-language)
 - [Conclusion](#conclusion)
 
@@ -104,7 +104,7 @@ Considering this simple query:
 
 We get a very visual result from it:
 
-![[Pasted image 20240206185950.png]]
+![image](https://github.com/cherryramatisdev/public_zet/assets/86631177/7d9d7811-719e-45f4-bfde-99dbcb5bd9ea)
 
 ## Conclusion
 
