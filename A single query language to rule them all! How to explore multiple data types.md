@@ -14,15 +14,18 @@ Has anyone being in that situation as a developer where you need to provide some
 
 ## Table of contents
 
-- [Why even consider having SQL everywhere?](#why-even-consider-having-sql-everywhere)
-- [SQL like queries for every filetype](#sql-like-queries-for-every-filetype)
-- [Using the built-in SPL language for a little warmup](#using-the-built-in-spl-language-for-a-little-warmup)
-- [Conclusion](#conclusion)
+- [[#Why even consider having SQL everywhere?|Why even consider having SQL everywhere?]]
+- [[#SQL like queries for every filetype|SQL like queries for every filetype]]
+	- [[#SQL like queries for every filetype#Aggregating the songs by album|Aggregating the songs by album]]
+	- [[#SQL like queries for every filetype#Filtering by specific album|Filtering by specific album]]
+	- [[#SQL like queries for every filetype#Merging two different data sources|Merging two different data sources]]
+	- [[#SQL like queries for every filetype#Looking into more file types|Looking into more file types]]
+- [[#The built-in SPL language as an alternative to SQL query language|The built-in SPL language as an alternative to SQL query language]]
+- [[#Conclusion|Conclusion]]
 
 ## Why even consider having SQL everywhere?
 
 We developers really need to start valuing query languages in general more than just when we're communicating with a database in a API, but also in a more broad view to look and analyse **any data source**. SQL is such an awesome and powerful language not only to get a first view into a set of data, but also performing complex aggregations, filtering and transformations on that same data.
-
 Specially when considering [basics concepts of piping data in linux](https://dev.to/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4#what-is-a-pipeline) it's possible to view a whole new world of possibilities where it's possible to for example:
 
 - 1. Make an HTTP request with `curl`
@@ -108,4 +111,4 @@ We get a very visual result from it:
 
 ## Conclusion
 
-Exploring data is something that I always strive to be fast and precise with, but as soon as the query became too arcane, I had to drop into a Python script. Having such open-source ideas around unifying data exploration is really cool and should be checked out!
+When it comes to exploring data, I always aim to be efficient and accurate. However, there are times when the query becomes too complex, and that's when I turn to a Python script. It's remarkable to see the abundance of open-source concepts that aim to bring together data exploration. If you're interested in optimizing your data exploration process, these resources are definitely worth exploring! May the force be with you 🍒
