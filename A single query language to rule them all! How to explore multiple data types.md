@@ -1,10 +1,7 @@
 ---
 title: A single query language to rule them all! How to explore multiple data types
 description: Has anyone being in that situation as a developer where you need to provide some piece of information about your system or even a more involved analysis around a particular data set to a marketing or business person? Most devs working for start-ups and agencies have been on that shoe before and when that happens it's really important to know some tools that quickly help doing that. In this article we'll dive in more on these possibilities.
-tags:
-  - databases
-  - esproc
-  - opensource
+tags: databases,esproc,opensource
 cover_image: 
 canonical_url: 
 published: false
@@ -14,14 +11,14 @@ Has anyone being in that situation as a developer where you need to provide some
 
 ## Table of contents
 
-- [[#Why even consider having SQL everywhere?|Why even consider having SQL everywhere?]]
-- [[#SQL like queries for every filetype|SQL like queries for every filetype]]
-	- [[#SQL like queries for every filetype#Aggregating the songs by album|Aggregating the songs by album]]
-	- [[#SQL like queries for every filetype#Filtering by specific album|Filtering by specific album]]
-	- [[#SQL like queries for every filetype#Merging two different data sources|Merging two different data sources]]
-	- [[#SQL like queries for every filetype#Looking into more file types|Looking into more file types]]
-- [[#The built-in SPL language as an alternative to SQL query language|The built-in SPL language as an alternative to SQL query language]]
-- [[#Conclusion|Conclusion]]
+- [Why even consider having SQL everywhere?](#why-even-consider-having-sql-everywhere)
+- [SQL like queries for every filetype](#sql-like-queries-for-every-filetype)
+	- [Aggregating the songs by album](#sql-like-queries-for-every-filetype#aggregating-the-songs-by-album)
+	- [Filtering by specific album](#sql-like-queries-for-every-filetype#filtering-by-specific-album)
+	- [Merging two different data sources](#sql-like-queries-for-every-filetype#merging-two-different-data-sources)
+	- [Looking into more file types](#sql-like-queries-for-every-filetype#looking-into-more-file-types)
+- [The built-in SPL language as an alternative to SQL query language](#the-built-in-spl-language-as-an-alternative-to-sql-query-language)
+- [Conclusion](#conclusion)
 
 ## Why even consider having SQL everywhere?
 
