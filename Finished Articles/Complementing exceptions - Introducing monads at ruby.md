@@ -7,13 +7,10 @@ canonical_url: null
 published: false
 ---
 
-Have you ever considered your approach to handling exceptions? I'm referring to
-the method in which you use the raise keyword within a class, and then you
-utilize the rescue keyword in the function that calls that method. However, in
-contemporary programming languages like OCaml, Rust, Elm, Haskell, and Go, there exists an alternative approach that is contrary to exceptions. Essentially, errors are treated as values, and we manage them as regular variables using constructs like match statements or simple if statements. In this article, we
-will delve into the implementation of this technique using the dry-monads gem.
+Have you ever considered your approach to handling exceptions? I'm referring to the method in which you use the raise keyword within a class, and then you utilize the rescue keyword in the function that calls that method. However, in contemporary programming languages like OCaml, Rust, Elm, Haskell, and Go, there exists an alternative approach that is contrary to exceptions. Essentially, errors are treated as values, and we manage them as regular variables using constructs like match statements or simple if statements. In this article, we will delve into the implementation of this technique using the dry-monads gem.
 
 ## Table of contents
+
 - [What is the problem with exceptions?](#what-is-the-problem-with-exceptions)
 - [What are the pros and cons of using errors as values](#what-are-the-pros-and-cons-of-using-errors-as-values)
 - [Putting our hands to work](#putting-our-hands-to-work)

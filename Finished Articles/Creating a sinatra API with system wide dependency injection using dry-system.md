@@ -6,9 +6,6 @@ cover_image: ''
 canonical_url: null
 published: true
 ---
-
-
-
 ## Table of contents
    1. [Introduction](#introduction)
 

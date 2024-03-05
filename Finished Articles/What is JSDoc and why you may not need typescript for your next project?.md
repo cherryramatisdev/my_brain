@@ -1,11 +1,12 @@
 ---
 title: What is JSDoc and why you may not need typescript for your next project?
 description: In this quick article we'll discuss why major projects are dropping typescript in favor of javascript without bundling and how to use JSDOC for full type checking + integration with typescript via .d.ts files.
-tags: programming, beginners, javascript
+tags: programming,beginners,javascript
 cover_image: 
 canonical_url: 
 published: false
 ---
+
 It has been a couple of weeks since I started testing out this technology, JSDoc, for maintaining some JavaScript codebases. This has been especially important after some major events that occurred in the last few months.
 
 - [Sveltejs move from Typescript to Javascript with JSDOC](https://devclass.com/2023/05/11/typescript-is-not-worth-it-for-developing-libraries-says-svelte-author-as-team-switches-to-javascript-and-jsdoc/)
