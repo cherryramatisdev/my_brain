@@ -1,5 +1,5 @@
 ---
-title: What can we learn with functional language OOP vs Functional
+title: Ending the war or continuing it? Let's bring functional programming to OOP codebases
 description: The more time goes by, the more I become a functional programming enthusiast. With this article we'll discuss concepts around functional programming to learn in a simple way and propose those concepts to be used even in OOP land!
 tags: programming,beginners,functional
 cover_image:
@@ -25,6 +25,8 @@ The goal of this article is to share my views on functional programming concepts
 
 ## What is OOP anyway
 
+<img src="https://github.com/cherryramatisdev/my_brain/assets/86631177/06c07348-a329-489b-9c9f-b97cd6ef6d8c" alt="OOP paradigm" width="500" height="300">
+
 OOP, or better known as Object-Oriented Programming, is a paradigm dating back to 1967. Its greatest representatives are Simula, Smalltalk, and Java. The thought process behind it is to reduce the amount of "global" state by enforcing encapsulation practices to group those states and any behavior modifying them under a common "entity" or "object."
 
 In fact, the name "Object-Oriented Programming" has been widely discussed over the years. One of the creators of OOP, Alan Key, actually wanted to focus more on the messaging aspect of the paradigm. This means that we should emphasize encapsulation and allow communication of state and behavior between objects. Perhaps in a different universe, we could have had "Messaging-Oriented Programming." However, the name OOP has endured over the years, and here we are!
@@ -32,6 +34,8 @@ In fact, the name "Object-Oriented Programming" has been widely discussed over t
 I don't know about you, but this simple process of considering another possible name for the paradigm made my mind go crazy, rethinking some concepts and actually simplifying the way I architect my software.
 
 ## What is functional anyway
+
+<img src="https://github.com/cherryramatisdev/my_brain/assets/86631177/bc831fd5-6cb6-49b0-9cf9-fe58e30b54d5" alt="Functional paradigm" width="500" height="300">
 
 The functional programming paradigm emerged in 1958 with the advent of the first Lisp language (good old days). Its roots can be traced back to the lambda calculus by Alonzo Church. The core principle of functional programming revolves around minimizing the dependence on state within the codebase.
 
@@ -50,6 +54,48 @@ While not incorrect, I would like to suggest a slight change in word usage to he
 > A class is a way to encapsulate state and behaviors that operate on that state.
 
 This simple word change really made a twist in my mind. I stopped trying to think of classes as real-world entities and started to think simply as another way to group state with similar context together and expose functions to operate on those states. I hope this slight change also helps you review your own concepts!
+
+The importance of abstracting this concept in such a way is to become proficient when reading code from languages with different constructs such as modules. We can observe that this OOP code written in typescript:
+
+```typescript
+class Github {
+  private _url: string;
+  privale _repo: string;
+  private _username: string;
+
+  constructor(url: string, repo: string, username: string) {
+    this._repo = repo
+    this._username = username
+    this._url = url
+  }
+
+  public createRepo(name: string): void {
+    // TODO: do stuff here using the provided state in _url, _repo and _username
+  }
+}
+```
+
+Is completely equivalent to this elixir code, even though the elixir code use "modules" instead of "classes":
+
+```elixir
+defmodule Github do
+  @url ""
+  @repo ""
+  @username ""
+
+  defstruct url: @url, repo: @repo, username: @username
+
+  def new(url, repo, username) do
+    %Github{url: url, repo: repo, username: username}
+  end
+
+  def create_repo(%Github{repo: repo, username: username}, name) do
+    # TODO: do stuff here using the provided state in url, repo, and username
+  end
+end
+```
+
+Next we'll look into some functional concepts and further discuss the merge of those paradigms, let's go!
 
 ## To mutate or not to mutate: What is immutability
 
