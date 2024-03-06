@@ -2,7 +2,7 @@
 title: Ending the war or continuing it? Let's bring functional programming to OOP codebases
 description: The more time goes by, the more I become a functional programming enthusiast. With this article we'll discuss concepts around functional programming to learn in a simple way and propose those concepts to be used even in OOP land!
 tags: programming,beginners,functional
-cover_image:
+cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f9c0f3071mn57a9rjlac.png
 canonical_url:
 published: false
 ---
@@ -25,7 +25,7 @@ The goal of this article is to share my views on functional programming concepts
 
 ## What is OOP anyway
 
-<img src="https://github.com/cherryramatisdev/my_brain/assets/86631177/06c07348-a329-489b-9c9f-b97cd6ef6d8c" alt="OOP paradigm" width="500" height="300">
+![image](https://github.com/cherryramatisdev/my_brain/assets/86631177/11d85e56-ce15-4d10-9cd6-87a7579563e8)
 
 OOP, or better known as Object-Oriented Programming, is a paradigm dating back to 1967. Its greatest representatives are Simula, Smalltalk, and Java. The thought process behind it is to reduce the amount of "global" state by enforcing encapsulation practices to group those states and any behavior modifying them under a common "entity" or "object."
 
