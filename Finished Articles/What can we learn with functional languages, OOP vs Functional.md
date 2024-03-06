@@ -1,7 +1,7 @@
 ---
 title: Ending the war or continuing it? Let's bring functional programming to OOP codebases
 description: The more time goes by, the more I become a functional programming enthusiast. With this article we'll discuss concepts around functional programming to learn in a simple way and propose those concepts to be used even in OOP land!
-tags: programming,beginners,functional
+tags: programming,beginners,functional,elixir
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f9c0f3071mn57a9rjlac.png
 canonical_url:
 published: false
@@ -13,8 +13,8 @@ The goal of this article is to share my views on functional programming concepts
 
 ## Table of Contents
 
-- [What is OOP anyway](#what-is-oop-anyway)
-- [What is functional anyway](#what-is-functional-anyway)
+- [In the beginning, there was Functional Programming](#in-the-beginning-there-was-functional-programming)
+- [Entering OOP, what is this paradigm?](#entering-oop-what-is-this-paradigm)
 - [What is a class and how can we think about it differently](#what-is-a-class-and-how-can-we-think-about-it-differently)
 - [To mutate or not to mutate: What is immutability](#to-mutate-or-not-to-mutate-what-is-immutability)
 - [The monster under the bed: what are side effects](#the-monster-under-the-bed-what-are-side-effects)
@@ -22,20 +22,9 @@ The goal of this article is to share my views on functional programming concepts
 - [Using functional patterns without going full haskell](#using-functional-patterns-without-going-full-haskell)
 - [Conclusion](#conclusion)
 
+## In the beginning, there was Functional Programming
 
-## What is OOP anyway
-
-![image](https://github.com/cherryramatisdev/my_brain/assets/86631177/11d85e56-ce15-4d10-9cd6-87a7579563e8)
-
-OOP, or better known as Object-Oriented Programming, is a paradigm dating back to 1967. Its greatest representatives are Simula, Smalltalk, and Java. The thought process behind it is to reduce the amount of "global" state by enforcing encapsulation practices to group those states and any behavior modifying them under a common "entity" or "object."
-
-In fact, the name "Object-Oriented Programming" has been widely discussed over the years. One of the creators of OOP, Alan Key, actually wanted to focus more on the messaging aspect of the paradigm. This means that we should emphasize encapsulation and allow communication of state and behavior between objects. Perhaps in a different universe, we could have had "Messaging-Oriented Programming." However, the name OOP has endured over the years, and here we are!
-
-I don't know about you, but this simple process of considering another possible name for the paradigm made my mind go crazy, rethinking some concepts and actually simplifying the way I architect my software.
-
-## What is functional anyway
-
-<img src="https://github.com/cherryramatisdev/my_brain/assets/86631177/bc831fd5-6cb6-49b0-9cf9-fe58e30b54d5" alt="Functional paradigm" width="500" height="300">
+![Functional](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hpg7b5lx6czu67jv9e07.png)
 
 The functional programming paradigm emerged in 1958 with the advent of the first Lisp language (good old days). Its roots can be traced back to the lambda calculus by Alonzo Church. The core principle of functional programming revolves around minimizing the dependence on state within the codebase.
 
@@ -43,7 +32,19 @@ In contrast to Object-oriented Programming (OOP), which allows state but emphasi
 
 Furthermore, even when state is introduced, it is essential to write it thinking about immutability, purity of functions and even avoiding side effects. All this concepts will be covered further as the article goes.
 
+## Entering OOP, what is this paradigm?
+
+![OOP](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/em6b2ejnoml80awxyrhw.png)
+
+OOP, or better known as Object-Oriented Programming, is a paradigm dating back to 1967. Its greatest representatives are Simula, Smalltalk, and Java. The thought process behind it is to reduce the amount of "global" state by enforcing encapsulation practices to group those states and any behavior modifying them under a common "entity" or "object."
+
+In fact, the name "Object-Oriented Programming" has been widely discussed over the years. One of the creators of OOP, Alan Key, actually wanted to focus more on the messaging aspect of the paradigm. This means that we should emphasize encapsulation and allow communication of state and behavior between objects. Perhaps in a different universe, we could have had "Messaging-Oriented Programming." However, the name OOP has endured over the years, and here we are!
+
+I don't know about you, but this simple process of considering another possible name for the paradigm made my mind go crazy, rethinking some concepts and actually simplifying the way I architect my software.
+
 ## What is a class and how can we think about it differently
+
+![What is a class](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/70x9cp26qi2cvx13dm3q.png)
 
 I think everyone has had that classic lecture where we were taught about a class "Animal" that includes a class "Dog," right? You probably heard those same words (at least I did).
 
@@ -99,6 +100,8 @@ Next we'll look into some functional concepts and further discuss the merge of t
 
 ## To mutate or not to mutate: What is immutability
 
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4fotff1cbifqi2c5ubtb.png" alt="Immutability" width="100" height="100">
+
 Now we're reaching the first real functional concept, and a very important one, I may add (everything is planned here)! To understand immutability properly, let's review the ways we deal with values in programming:
 
 Typically, we bind values to variables so we can operate on them later, right? Something as simple as
@@ -132,6 +135,8 @@ Immutability can be defined as a practice to avoid changing (or mutating) any va
 With this phrase, I mean that it's okay to create a scoped variable inside a function and mutate it there. However, as soon as you pass this mutable variable to another function, you will increase the number of targets mutating the same variable, and your control will slowly be lost. This is the exact situation that we want to avoid!
 
 ## The monster under the bed: what are side effects
+
+![Side effects](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yb1osy6ziacyc2l12h6v.png)
 
 This topic generates a lot of heat whenever someone raises it for discussion. I may not cover every nuance of this subject, but I will definitely explain to you what they are and how I manage side effects in my own software, okay?
 
@@ -204,6 +209,8 @@ This strategy is really great because you don't even need to worry about the sid
 
 ## Isolate everything: what are pure functions
 
+![Pure functions](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgnpfyig36sssuio9qpy.png)
+
 Now it's time to wrap up all the knowledge gained so far. In the previous example, we observed code separated into "side effects" and "no side effects." We also saw how these functions are easier to test and that our main transformation business logic should be kept isolated. Are you wondering what these functions are called? They are **pure functions**!
 
 Let's examine a proper formal definition of pure functions and explore the concept step by step.
@@ -236,6 +243,8 @@ Since pure functions are very small and composable, their number increases very 
 
 
 ## Using functional patterns without going full haskell
+
+![It's all functions](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/42ndx4tuvrs35q2woepg.png)
 
 I always feared learning the functional paradigm because the community made it look really complicated by using ready-made sentences and big concepts for everyone trying to learn some small tips. After grasping many functional languages and trying to learn as much as I can, my goal became to simplify those concepts and, most importantly, advocate for using functional concepts even in your OOP code.
 
