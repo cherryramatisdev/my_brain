@@ -1,10 +1,14 @@
 ---
 title: Complementing exceptions - Introducing monads at ruby
 description: Let's learn how to use dry-monads to keep our codebase straightforward and easy to use without exceptions
-tags: 'ruby,monads,dry'
-cover_image: ''
-canonical_url: null
-published: false
+tags:
+  - ruby
+  - monads
+  - dry
+  - article
+cover_image: ""
+canonical_url: 
+published: true
 ---
 
 Have you ever considered your approach to handling exceptions? I'm referring to the method in which you use the raise keyword within a class, and then you utilize the rescue keyword in the function that calls that method. However, in contemporary programming languages like OCaml, Rust, Elm, Haskell, and Go, there exists an alternative approach that is contrary to exceptions. Essentially, errors are treated as values, and we manage them as regular variables using constructs like match statements or simple if statements. In this article, we will delve into the implementation of this technique using the dry-monads gem.

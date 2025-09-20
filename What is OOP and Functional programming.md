@@ -1,3 +1,9 @@
+---
+tags:
+  - notetaking
+  - personal
+---
+
 OOP is programming paradigm that was originally meant to be called "Message driven development" mostly because object is a very broad view with no specific definition. 
 
 The idea behind OOP is to encapsulate and deal with states in a more secure and controlled way possible. Essentially, we're acknowledging that state exists and we need to own it.

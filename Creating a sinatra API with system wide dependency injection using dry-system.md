@@ -1,9 +1,15 @@
 ---
 title: Creating a sinatra API with system wide dependency injection using dry-system
 description: Let's talk about creating an API using sinatra, rom-rb and dry-system with a great modular architecture!
-tags: 'ruby,backend,sinatra,dry,rom'
-cover_image: ''
-canonical_url: null
+tags:
+  - ruby
+  - backend
+  - sinatra
+  - dry
+  - rom
+  - article
+cover_image: ""
+canonical_url: 
 published: true
 ---
 ## Table of contents

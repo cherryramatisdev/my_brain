@@ -1,8 +1,12 @@
 ---
 title: Enhancing development with REPLs - A practical guide
 description: Have you ever encountered a problem and immediately had the solution pop into your mind? No? So this article is for you! Let's learn how to use the REPL in our favor for development.
-tags: ruby,repl,development
-published: false
+tags:
+  - ruby
+  - repl
+  - development
+  - article
+published: true
 ---
 
 Have you ever encountered a problem and immediately had the solution pop into your mind without the need for debugging? If not, you're not alone. In this article, I'll introduce a method to provide real-time feedback on the functions you create as you work through a problem. After all, none of us are infallible geniuses who can always nail it first try like ThePrimeagen.

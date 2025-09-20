@@ -1,10 +1,16 @@
 ---
 title: Linux filters - How to streamline text like a boss
 description: What is the linux philosophy and how to follow it by creating small tools that manipulate text and can be put in a pipeline, this is what we'll go through on this artcile.
-tags: ruby,shell,beginners,linux,vim
+tags:
+  - ruby
+  - shell
+  - beginners
+  - linux
+  - vim
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to apply those as good practices on our ruby/bash scripts!
 

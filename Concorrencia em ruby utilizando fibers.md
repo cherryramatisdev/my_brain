@@ -1,9 +1,15 @@
 ---
 title: Concorrencia em ruby utilizando fibers
 description: Vamos explorar o basico de concorrencia em ruby utilizando fibers!
-tags: 'ruby,concurrency,concorrencia,braziliandevs,beginners'
-cover_image: ''
-canonical_url: null
+tags:
+  - ruby
+  - concurrency
+  - concorrencia
+  - braziliandevs
+  - beginners
+  - article
+cover_image: ""
+canonical_url: 
 published: false
 ---
 

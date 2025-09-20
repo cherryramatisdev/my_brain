@@ -1,9 +1,12 @@
 ---
 title: How to manage HTTP requests on page load with elm
 description: How to create a simple single page application with elm consuming a HTTP route
-tags: 'elm,frontend'
-cover_image: ''
-canonical_url: null
+tags:
+  - elm
+  - frontend
+  - article
+cover_image: ""
+canonical_url: 
 published: true
 ---
 

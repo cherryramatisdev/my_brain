@@ -1,10 +1,15 @@
 ---
 title: Pattern matching - Dealing with the if statement nightmare
 description: Let's learn how to deal with the if statement nightmare by leveraging better pattern matching patterns both in Ruby and in Elixir.
-tags: ruby,elixir,beginners,programming
+tags:
+  - ruby
+  - elixir
+  - beginners
+  - programming
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 
 I think we all faced(or wrote) that 20 lines of if statements to check a single variable in all the possibilities, and I think we all suffered to add one more statement to that function leaving it even more unreadable. Well, on this article we'll see a better way **in my opinion** called pattern matching, essentially we'll learn how to use `switch cases with steroids`!!!

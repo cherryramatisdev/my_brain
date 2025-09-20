@@ -1,10 +1,15 @@
 ---
 title: Performance e elegância! Escrevendo uma CLI CRUD utilizando ScyllaDB e Ruby
 description: Como desenvolver uma CLI com ações CRUDs consumindo o banco de dados ScyllaDB com Ruby.
-tags: 'ruby,scylladb,braziliandevs,beginners'
-cover_image: ''
-canonical_url: null
-published: false
+tags:
+  - ruby
+  - scylladb
+  - braziliandevs
+  - beginners
+  - article
+cover_image: ""
+canonical_url: 
+published: true
 ---
 
 Boas pessoas desenvolvedoras precisam saber fazer CRUD não é mesmo? Então já pensou em ser capaz de produzir um CRUD com um banco de dados NoSQL montado para **alta** escalabilidade e ainda mais utilizando uma linguagem elegante e simples? Não? Pois muito que bem, nesse artigo você vai aprender como construir uma CLI utilizando a gem `dry-cli` consumindo o banco de dados ScyllaDB com a gem `cassandra-driver`

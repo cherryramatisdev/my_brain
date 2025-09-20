@@ -1,9 +1,14 @@
 ---
 title: Bonzai and how to create a personal CLI to rule them all
 description: How to human friendly CLIs with tab completion by default using bonzai and golang
-tags: 'go,golang,cli,bonzai'
-cover_image: ''
-canonical_url: null
+tags:
+  - go
+  - golang
+  - cli
+  - bonzai
+  - article
+cover_image: ""
+canonical_url: 
 published: true
 ---
 

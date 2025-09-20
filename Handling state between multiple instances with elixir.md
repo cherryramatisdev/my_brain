@@ -1,10 +1,14 @@
 ---
 title: Handling state between multiple instances with elixir
 description: Elixir code works really well for concurrent code, want to know why? Let's dive in the world of processes in elixir with tasks, agents and gen servers.
-tags: beginners,elixir,tutorial
+tags:
+  - beginners
+  - elixir
+  - tutorial
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 
 Elixir works **really** well for concurrent code because of it's functional nature and ability to run in multiple processes, but how we handle state when our code is running all over the place? Well, there is some techniques and in this article we'll learn more about it together shall we?

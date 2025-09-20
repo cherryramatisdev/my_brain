@@ -1,10 +1,14 @@
 ---
 title: Compartilhando seu conhecimento com o mundo! Como escrever artigos
 description: Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto especifico alem de ser uma excelente forma de melhorar a organização das ideias, comunicação e obviamente se auto promover na comunidade. Nesse artigo vamos discutir como organizar as ideias e produzir conteúdos técnicos!
-tags: beginners,tutorial,writing
+tags:
+  - beginners
+  - tutorial
+  - writing
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 
 Compartilhar conhecimento escrito é uma ótima forma de dominar um assunto específico, além de ser uma excelente maneira de melhorar a organização das ideias, comunicação e obviamente se autopromover na comunidade. Essa produção de artigos tanto técnicos quanto sociais são muito importantes tanto para quem escreve quanto para quem está lendo, lembre-se sempre: `Você sabe mais hoje do que quem começou ontem`. Pensando nisso vamos discutir um pouco mais sobre como organizar as próprias ideias na produção de um artigo técnico para a plataforma dev.to!

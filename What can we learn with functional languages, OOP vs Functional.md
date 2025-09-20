@@ -1,10 +1,15 @@
 ---
 title: Ending the war or continuing it? Let's bring functional programming to OOP codebases
 description: The more time goes by, the more I become a functional programming enthusiast. With this article we'll discuss concepts around functional programming to learn in a simple way and propose those concepts to be used even in OOP land!
-tags: programming,beginners,functional,elixir
+tags:
+  - programming
+  - beginners
+  - functional
+  - elixir
+  - article
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f9c0f3071mn57a9rjlac.png
-canonical_url:
-published: false
+canonical_url: 
+published: true
 ---
 
 The more time goes by, the more I become a functional programming enthusiast. Even when I'm working in an OOP codebase, I try to apply small concepts aimed at simplifying the code and predicting outcomes more easily. As a Rubyist, I also love how functional code is trivial to write unit tests.

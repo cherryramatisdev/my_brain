@@ -1,9 +1,12 @@
 ---
 title: How to create your own completion for vim
 description: How to create your own completion for vim
-tags: 'vim,neovim'
-cover_image: ''
-canonical_url: null
+tags:
+  - vim
+  - neovim
+  - article
+cover_image: ""
+canonical_url: 
 published: true
 ---
 

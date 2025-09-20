@@ -1,10 +1,15 @@
 ---
 title: Metaprogramming in ruby
 description: Metaprogramming is the reason why ruby and frameworks like rails feels so magical, let's learn how this magic work and how we can do it by ourselves?
-tags: ruby,programming,tutorial,metaprogramming
+tags:
+  - ruby
+  - programming
+  - tutorial
+  - metaprogramming
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 The ruby programming language is known for two major facts: One is its core philosophy with object-oriented programming where "Everything is an object", the other important one is its incredible flexibility to define DSLs and "magic" classes. This magic is on purpose and a quite special feature of ruby called **metaprogramming**, in this article we'll see more about the deep nested details of ruby and how to create magic APIs with metaprogramming!
 

@@ -1,10 +1,14 @@
 ---
 title: Gen servers - Abstracting state management and task run together
 description: We as developer love abstractions, what about introducing a cool abstraction on top of the elixir core concept that is running everything in a process? Let's learn more about gen server.
-tags: elixir,beginners,programming
+tags:
+  - elixir
+  - beginners
+  - programming
+  - article
 cover_image: ""
 canonical_url: 
-published: false
+published: true
 ---
 
 In Elixir, every function runs inside a separate process, and we can deal with processes in a very natural way offered by the language. It's possible to manage state between multiple long-running processes through known abstractions such as `Agent`. In this article, we'll talk a little about an abstraction that allows the management of long-running processes with state and message communication for running functions accordingly! I hope it'll be fun and easy to understand.

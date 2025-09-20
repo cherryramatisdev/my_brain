@@ -1,10 +1,13 @@
 ---
 title: Bringing more sweetness to ruby with sorbet types 🍦
 description: Ever wanted to add type checking for your ruby code? Go from a rubber duck to a full armed duck? So let's learn more about types in ruby using sorbet
-tags: ruby,types
+tags:
+  - ruby
+  - types
+  - article
 cover_image: 
-canonical_url:
-published: false
+canonical_url: 
+published: true
 ---
 
 Have you ever wanted to add type-checking to your Ruby code? Going from a rubber duck to a full-armed duck? (pun intended) no? So allow me to introduce you to type checking using the provided gem [sorbet](https://sorbet.org) created by [Stripe](https://stripe.com/en-gb-br).

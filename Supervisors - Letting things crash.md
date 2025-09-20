@@ -1,8 +1,12 @@
 ---
 title: Supervisors - Letting things crash
 description: It's time to explore the last bit about managing processes with elixir! We'll understand what is a supervisor, what is a supervision tree and how do we manage our processes once it dies! Let's crash processes together
-tags: elixir,beginners,programming
-published: false
+tags:
+  - elixir
+  - beginners
+  - programming
+  - article
+published: true
 ---
 
 In the previous articles, we explored various aspects of managing processes in Elixir. From creating processes for asynchronous tasks to persisting state across long-running processes, and even implementing a message-based architecture for efficient process communication, how much more things we can do with processes in elixir for god’s sake!? Ahem - in this article, we'll delve into another critical aspect of process management in Elixir: handling the lifecycle of processes, especially when they die/are terminated.

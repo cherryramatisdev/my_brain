@@ -1,3 +1,9 @@
+---
+tags:
+  - article
+published: false
+---
+
 ## Functional programming
 ### Pros
 - Controlled scenarios in any context of the codebase
